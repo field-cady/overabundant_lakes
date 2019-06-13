@@ -55,8 +55,9 @@ var populateMap = function() {
 }
 
 var showTimestamp = function() {
-  timestamp_div = document.getElementById("last_update_timestamp")
-  timestamp_div.children.append(data["timestamp"])
+  timestamp_div = document.getElementById("last_update_timestamp");
+  var content = document.createTextNode(data["timestamp"]);
+  timestamp_div.appendChild(content);
 }
 
 downloadData()
