@@ -1,5 +1,6 @@
 import requests, json
 from bs4 import BeautifulSoup
+from datetime import datetime
 
 def parse_table_from_page(txt):
     # Return list of table entries on the page
@@ -40,8 +41,12 @@ def get_lakes_from_all_pages():
         i += 1
     return all_records
 
-all_records = get_lakes_from_all_pages()
-output = json.dumps(all_records)
-open('lakes.json', 'w').write(output)
-#json.dump(open())
-#print(len(all_records))
+def get_data():
+    lakes = get_lakes_from_all_pages()
+    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    return dict(lakes=lakes, timestamp=timestamp)
+
+if __name__ == '__main__':
+    data = get_data()
+    output = json.dumps(data)
+    open('data.json', 'w').write(output)
