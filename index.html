@@ -36,6 +36,7 @@ var downloadData = function() {
     xhr.onload = function() {
       data=xhr.response
       populateMap();
+      showTimestamp();
     };
     xhr.send();
 };
