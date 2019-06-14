@@ -31,15 +31,22 @@
 
 
 <body>
+
 <h1>Overabundant Fish Lakes of Washington State</h1>
 This page shows the locations of overabundant mountain fishing lakes,
 with data scraped from the
 <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/overabundant">WDFW site</a>.
 The data was last updated at:
 <div id="last_update_timestamp"></div>
-If it is too far out of date, contact Field Cady at field.cady@gmail.com
-and tell him to kick off the update script.
+
 <div style="height:70%" id="mapid"></div>
+
+This site was created as a project by
+<a href="http://www.fieldcady.com">Field Cady</a>.
+If you have any feedback you can reach him at field.cady@gmail.com.
+If the map is too far out of date (see the last update above)
+you can ping him and ask him to update it.
+
 
 <script>
 var mymap = L.map('mapid').setView([47.596, -120.661], 7);L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
