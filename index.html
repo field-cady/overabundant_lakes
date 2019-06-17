@@ -79,7 +79,7 @@ var populateMap = function() {
   }).addTo(mymap);
   for (i=0; i<lakes.length; i++) {
     lk = lakes[i];
-    clickable_name = '<a href="'+lk['url']+'">'+lk['name']+'</a>'
+    clickable_name = '<a target="_blank" href="'+lk['url']+'">'+lk['name']+'</a>'
     L.marker([lk['lat'], lk['lon']]).addTo(mymap)
         .bindPopup(clickable_name)
         .openPopup().closePopup();
