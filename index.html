@@ -10,14 +10,6 @@
   gtag('config', 'UA-34354121-1');
 </script>
 
-<!-- AdSense to make a little bit of money -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-8557580744041070",
-    enable_page_level_ads: true
-  });
-</script>
 
 <script src="functions.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
@@ -88,6 +80,13 @@ var downloadData = function() {
     xhr.send();
 };
 
+var lake2marker_html = function(lk) {
+  clickable_name = '<a target="_blank" href="'+lk['url']+'">'+lk['name']+'</a>'
+  elevation = '<p>Elevation: '+String(Math.round(lk['elevation']))+'ft'
+  county = '<p>County: '+lk['county']+'</p>'
+  return clickable_name+elevation+county;
+}
+
 var populateMap = function() {
   lakes = data["lakes"]
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -95,9 +94,9 @@ var populateMap = function() {
   }).addTo(mymap);
   for (i=0; i<lakes.length; i++) {
     lk = lakes[i];
-    clickable_name = '<a target="_blank" href="'+lk['url']+'">'+lk['name']+'</a>'
+    //clickable_name = '<a target="_blank" href="'+lk['url']+'">'+lk['name']+'</a>'
     L.marker([lk['lat'], lk['lon']]).addTo(mymap)
-        .bindPopup(clickable_name)
+        .bindPopup(lake2marker_html(lk))
         .openPopup().closePopup();
   };
 }
