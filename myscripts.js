@@ -84,10 +84,14 @@ var updateMarkers = function() {
   var elevation_filter_value = document.getElementById('elevation_filter').value
   if (elevation_filter_value=='any') {
     elevation_filter = function(el){return true}
-  } else if (elevation_filter_value=='<=5000') {
-    elevation_filter = function(el){return el<=5000}
-  } else if (elevation_filter_value=='>5000') {
-    elevation_filter = function(el){return el>5000}
+  } else if (elevation_filter_value=='<4000') {
+    elevation_filter = function(el){return el<4000}
+  } else if (elevation_filter_value=='4000-5000') {
+    elevation_filter = function(el){return 4000<=el & el<=5000}
+  } else if (elevation_filter_value=='5000-6000') {
+    elevation_filter = function(el){return 5000<=el & el<=6000}
+  } else if (elevation_filter_value=='>6000') {
+    elevation_filter = function(el){return el>6000}
   }
   for (i=0; i<markers.length; i++) {
     m = markers[i];
