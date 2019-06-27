@@ -87,9 +87,9 @@ var updateMarkers = function() {
   } else if (elevation_filter_value=='<4000') {
     elevation_filter = function(el){return el<4000}
   } else if (elevation_filter_value=='4000-5000') {
-    elevation_filter = function(el){return 4000<=el & el<=5000}
+    elevation_filter = function(el){return (4000<=el & el<=5000)}
   } else if (elevation_filter_value=='5000-6000') {
-    elevation_filter = function(el){return 5000<=el & el<=6000}
+    elevation_filter = function(el){return (5000<=el & el<=6000)}
   } else if (elevation_filter_value=='>6000') {
     elevation_filter = function(el){return el>6000}
   }
