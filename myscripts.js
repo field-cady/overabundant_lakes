@@ -88,8 +88,10 @@ var getFilterFunction = function() {
     size_filter = function(el){return true}
   } else if (size_filter_value=='<5') {
     size_filter = function(el){return el<5}
-  } else if (size_filter_value=='>=5') {
-    size_filter = function(el){return 5<=el}
+  } else if (size_filter_value=='5-10') {
+    size_filter = function(el){return 5<=el & el<=10}
+  }else if (size_filter_value=='>10') {
+    size_filter = function(el){return 10<el}
   }
   //
   var county_filter_value = document.getElementById('county_filter').value
