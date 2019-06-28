@@ -21,8 +21,9 @@ def html_to_record(r):
     url = 'https://wdfw.wa.gov' + r['name'].findNext('a').get('href')
     elevation = next(r['elevation'].children).string.split()[0]
     county = next(r['county'].children).string.strip()
+    acres = next(r['acres'].children).string.strip().split()[0]
     latlon = [x.string for x in r['location'].findAll('span')]
-    return dict(name=name, url=url, elevation=float(elevation), county=county, lat=float(latlon[0]), lon=float(latlon[1]))
+    return dict(name=name, url=url, elevation=float(elevation), county=county, lat=float(latlon[0]), lon=float(latlon[1]), acres=acres)
 
 def get_lakes_from_all_pages():
     # Scrape all pages

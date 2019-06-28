@@ -67,6 +67,33 @@ Elevation:
   <option value=">6000">Above 6000 ft.</option>
 </select>
 
+Lake Size:
+<select id="size_filter" name="size_filter" onchange="updateMarkers()">
+  <option value="any">Any Size</option>
+  <option value="<5">Up to 5 Acres</option>
+  <option value=">=5">Over 5 Acres</option>
+</select>
+
+County:
+<select id="county_filter" name="county_filter" onchange="updateMarkers()">
+  <option value="any">Any County</option>
+  <option value="Clallam">Clallam</option>
+  <option value="Pierce">Pierce</option>
+  <option value="Jefferson">Jefferson</option>
+  <option value="Snohomish">Snohomish</option>
+  <option value="Okanogan">Okanogan</option>
+  <option value="Yakima">Yakima</option>
+  <option value="Kittitas">Kittitas</option>
+  <option value="Grays Harbor">Grays Harbor</option>
+  <option value="Skamania">Skamania</option>
+  <option value="Skagit">Skagit</option>
+  <option value="Lewis">Lewis</option>
+  <option value="Chelan">Chelan</option>
+  <option value="King">King</option>
+  <option value="Whatcom">Whatcom</option>
+</select>
+
+
 <div style="height:70%" id="mapid"></div>
 
 This site was created as a project by
