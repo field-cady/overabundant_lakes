@@ -25,9 +25,14 @@ def html_to_record(r):
     latlon = [x.string for x in r['location'].findAll('span')]
     return dict(name=name, url=url, elevation=float(elevation), county=county, lat=float(latlon[0]), lon=float(latlon[1]), acres=acres)
 
-def get_lakes_from_all_pages():
+starting_url_base = 'https://wdfw.wa.gov/fishing/locations/high-lakes/getting-started?name=&county=All&order=title&sort=asc&page='
+
+overabundant_url_base = 'https://wdfw.wa.gov/fishing/locations/high-lakes/overabundant?name=&county=All&order=title&sort=asc&page='
+
+all_url_base = 'https://wdfw.wa.gov/fishing/locations/high-lakes?name=&county=All&order=title&sort=asc&page='
+
+def get_lakes_from_all_pages(url_base):
     # Scrape all pages
-    url_base = 'https://wdfw.wa.gov/fishing/locations/high-lakes/overabundant?name=&county=All&order=title&sort=asc&page='
     i = 0
     all_records = []
     while True:
@@ -43,7 +48,14 @@ def get_lakes_from_all_pages():
     return all_records
 
 def get_data():
-    lakes = get_lakes_from_all_pages()
+    all_lakes = get_lakes_from_all_pages(all_url_base)
+    overabundant_lakes = get_lakes_from_all_pages(overabundant_url_base)
+    starting_lakes = get_lakes_from_all_pages(starting_url_base)
+    overabundant_urls = set(lk['url'] for lk in overabundant_lakes)
+    starting_urls = set(lk['url'] for lk in starting_lakes)
+    for lk in all_lakes:
+        lk['starting'] = lk['url'] in starting_urls
+        lk['overabundant'] = lk['url'] in overabundant_urls
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     return dict(lakes=lakes, timestamp=timestamp)
 
