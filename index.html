@@ -49,12 +49,12 @@ with data scraped from the
 <p>This page shows the locations of alpine fishing lakes,
 with data scraped from the
 <a href="https://wdfw.wa.gov/fishing/locations/high-lakes">WDFW site</a>.
-</p>
 To help planning, it breaks them out by whether they are overabundant
 or good starting lakes.
+</p>
 
-<h2>Overabundant</h2>
 <p>
+<h2>Overabundant: </h2>
   Overabundant lakes are ones where there are too many fish (usually from human stocking)
   for the available resources.  This puts a great burden on the ecosystem, and
   the WDFW encourages anglers to harvest the maximum daily limit.
@@ -62,16 +62,10 @@ or good starting lakes.
   and do the environment a favor!
 </p>
 
-<h2>Starting</h2>
 <p>
+<h2>Starting: </h2>
   These lakes are easier to access for people new to the sport of alpine fishing.
 </p>
-
-<p>
-The data was last updated at:
-<div id="last_update_timestamp"></div>
-</p>
-<p></p>
 
 Type:
 <select id="type_filter" name="type_filter" onchange="updateMarkers()">
@@ -119,7 +113,7 @@ County:
 </select>
 
 
-<div style="height:70%" id="mapid"></div>
+<div style="height:70%;width:70%" id="mapid"></div>
 
 This site was created as a project by
 <a href="http://www.fieldcady.com">Field Cady</a>.
@@ -127,6 +121,9 @@ If you have any feedback you can reach him at field.cady@gmail.com.
 If the map is too far out of date (see the last update above)
 you can ping him and ask him to update it.
 
+<p>
+<div id="last_update_timestamp">The data was last updated at: </div>
+</p>
 
 <script type="text/javascript" src="myscripts.js"></script>
 
