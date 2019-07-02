@@ -105,7 +105,7 @@ var getFilterFunction = function() {
     county_filter = function(cty){return cty==county_filter_value}
   }
   //
-  return  function(lk) {
+  return function(lk) {
     return elevation_filter(lk.elevation) & size_filter(lk.acres) & county_filter(lk.county) & type_filter(lk)
   }
 }
