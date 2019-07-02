@@ -47,10 +47,32 @@ var lake2marker_html = function(lk) {
   return clickable_name+elevation+county+size;
 }
 
+var getIconForLake = function(lk) {
+  if (lk['starting'] & lk['overabundant']) {
+    color='violet'
+  } else if (lk['starting'] & (!lk['overabundant'])) {
+    color='red'
+  } else if ((!lk['starting']) & lk['overabundant']) {
+    color='blue'
+  } else {
+    color='grey'
+  }
+  var icon = new L.Icon({
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-'+color+'.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+  return icon;
+}
+
 var populateMarkers = function(lakes) {
   for (i=0; i<lakes.length; i++) {
     lk = lakes[i];
-    m = L.marker([lk['lat'], lk['lon']]).bindPopup(lake2marker_html(lk));
+    icon = getIconForLake(lk);
+    m = L.marker([lk['lat'], lk['lon']], {icon: icon}).bindPopup(lake2marker_html(lk));
     m.lake = lk;
     markers.push(m)
   };
@@ -76,6 +98,8 @@ var getFilterFunction = function() {
     type_filter = function(lk){return lk['overabundant']}
   } else if (type_filter_value=='starting') {
     type_filter = function(el){return lk['starting']}
+  } else if (type_filter_value=='both') {
+    type_filter = function(el){return lk['starting'] & lk['overabundant']}
   }
   // Elevation
   var elevation_filter_value = document.getElementById('elevation_filter').value
