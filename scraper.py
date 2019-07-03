@@ -49,6 +49,7 @@ def get_lakes_from_all_pages(url_base):
 
 def get_data():
     all_lakes = get_lakes_from_all_pages(all_url_base)
+    all_lakes = [lk for lk in all_lakes if lk['elevation']>2500.0]
     overabundant_lakes = get_lakes_from_all_pages(overabundant_url_base)
     starting_lakes = get_lakes_from_all_pages(starting_url_base)
     overabundant_urls = set(lk['url'] for lk in overabundant_lakes)
@@ -57,7 +58,7 @@ def get_data():
         lk['starting'] = lk['url'] in starting_urls
         lk['overabundant'] = lk['url'] in overabundant_urls
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    return dict(lakes=lakes, timestamp=timestamp)
+    return dict(lakes=all_lakes, timestamp=timestamp)
 
 if __name__ == '__main__':
     data = get_data()
