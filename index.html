@@ -67,6 +67,7 @@ or good starting lakes.
   These lakes are easier to access for people new to the sport of alpine fishing.
 </p>
 
+<b>Filters:</b>
 Type:
 <select id="type_filter" name="type_filter" onchange="updateMarkers()">
   <option value="any">All</option>
@@ -74,7 +75,6 @@ Type:
   <option value="starting">Starting</option>
   <!--<option value="both">Both</option>--> <!--No lake in both categories-->
 </select>
-
 
 Elevation:
 <select id="elevation_filter" name="elevation_filter" onchange="updateMarkers()">
@@ -112,6 +112,11 @@ County:
   <option value="Whatcom">Whatcom</option>
 </select>
 
+<p></p>
+<b>Legend:</b>
+<img src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png" style="height:5%">Starting
+<img src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png" style="height:5%">Overstocked
+<img src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png" style="height:5%">Other
 
 <div style="height:70%;width:70%" id="mapid"></div>
 
