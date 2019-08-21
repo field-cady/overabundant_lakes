@@ -11,20 +11,28 @@ var DEFAULT_DATA = {"lakes": [
 
 var data = null;
 
-var mymap = L.map('mapid').setView([47.596, -120.661], 7);L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1IjoiZmllbGRjYWR5IiwiYSI6ImNqd3Rmb2d3bjBkMDA0OW5yamYxNnRwdGwifQ.kBilx8iMkTn8RUyrO7ZHGA'
-}).addTo(mymap);
+var mymap = L.map('mapid').setView([47.596, -120.661], 7);
+
 
 var markers = [];
 
-// Functions
+// Functions for populating the map
 
-var downloadDataAndRender = function() {
+var initializeMap = function() {
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox.streets',
+      accessToken: 'pk.eyJ1IjoiZmllbGRjYWR5IiwiYSI6ImNqd3Rmb2d3bjBkMDA0OW5yamYxNnRwdGwifQ.kBilx8iMkTn8RUyrO7ZHGA'
+  }).addTo(mymap);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(mymap);
+}
+
+var downloadDataAndRender = function(url) {
     var xhr = new XMLHttpRequest();
-    url = "data.json";
+    //url = "data.json";
     xhr.open('GET', url, true);
     xhr.responseType = 'json';
     xhr.onload = function() {
@@ -36,8 +44,31 @@ var downloadDataAndRender = function() {
 
 var renderData = function(dat) {
   showTimestamp(dat["timestamp"]);
-  populateMap(dat["lakes"]);
+  addLakesToMap(dat["lakes"]);
 }
+
+var addLakesToMap = function(lakes) {
+  populateMarkers(lakes);
+  /*for (i=0; i<lakes.length; i++) {
+    m = markers[i];
+    if (~m.addTo(mymap).openPopup().closePopup();
+  };*/
+}
+
+var populateMarkers = function(lakes) {
+  for (i=0; i<lakes.length; i++) {
+    lk = lakes[i];
+    icon = getIconForLake(lk);
+    m = L.marker([lk['lat'], lk['lon']], {icon: icon}).bindPopup(lake2marker_html(lk));
+    m.lake = lk;
+    lk.marker = m;
+    markers.push(m);
+    m.addTo(mymap).openPopup().closePopup();
+  };
+}
+
+
+// Helper utility functions
 
 var lake2marker_html = function(lk) {
   clickable_name = '<a target="_blank" href="'+lk['url']+'">'+lk['name']+'</a>'
@@ -103,28 +134,10 @@ var getIconForLake = function(lk) {
   return icon;
 }
 
-var populateMarkers = function(lakes) {
-  for (i=0; i<lakes.length; i++) {
-    lk = lakes[i];
-    icon = getIconForLake(lk);
-    m = L.marker([lk['lat'], lk['lon']], {icon: icon}).bindPopup(lake2marker_html(lk));
-    m.lake = lk;
-    markers.push(m)
-  };
-}
-
-var populateMap = function(lakes) {
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(mymap);
-  populateMarkers(lakes);
-  for (i=0; i<lakes.length; i++) {
-    m = markers[i];
-    m.addTo(mymap).openPopup().closePopup();
-  };
-}
-
 var getFilterFunction = function() {
+  // Reads current filter settings and returns a function that says whether
+  // a lake passes those filters
+
   // Type
   var type_filter_value = document.getElementById('type_filter').value
   if (type_filter_value=='any') {
@@ -173,6 +186,8 @@ var getFilterFunction = function() {
   }
 }
 
+// Top-level functions below this line
+
 var updateMarkers = function() {
   for (i=0; i<markers.length; i++) {
     m = markers[i];
@@ -192,9 +207,13 @@ var showTimestamp = function(timestamp) {
   timestamp_div.appendChild(content);
 }
 
+initializeMap()
 if (location.origin === "file://") {
     data = DEFAULT_DATA
     renderData(data);
   } else {
-    downloadDataAndRender()
+    //downloadDataAndRender("data.json";)
+    downloadDataAndRender("data/overabundant_lakes.json");
+    downloadDataAndRender("data/starting_lakes.json");
+    downloadDataAndRender("data/normal_lakes.json");
 }

@@ -58,9 +58,24 @@ def get_data():
         lk['starting'] = lk['url'] in starting_urls
         lk['overabundant'] = lk['url'] in overabundant_urls
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    return dict(lakes=all_lakes, timestamp=timestamp)
+    return dict(
+        lakes=all_lakes,
+        overabundant_lakes=[lk for lk in all_lakes if lk['overabundant']],
+        starting_lakes=[lk for lk in all_lakes if lk['starting']],
+        normal_lakes=[lk for lk in all_lakes if not lk['overabundant'] and not lk['overabundant']],
+        timestamp=timestamp
+    )
 
 if __name__ == '__main__':
     data = get_data()
-    output = json.dumps(data)
+    output = json.dumps(dict(lakes=data['lakes'], timestamp=data['timestamp']))#data)
     open('data.json', 'w').write(output)
+    open('data/starting_lakes.json', 'w').write(json.dumps(
+        dict(lakes=data['starting_lakes'], timestamp=data['timestamp'])
+    ))
+    open('data/overabundant_lakes.json', 'w').write(json.dumps(
+        dict(lakes=data['overabundant_lakes'], timestamp=data['timestamp'])
+    ))
+    open('data/normal_lakes.json', 'w').write(json.dumps(
+        dict(lakes=data['normal_lakes'], timestamp=data['timestamp'])
+    ))
