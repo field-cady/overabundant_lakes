@@ -68,13 +68,17 @@ or good starting lakes.
 </p>
 
 <b>Filters:</b>
-Type:
-<select id="type_filter" name="type_filter" onchange="updateMarkers()">
-  <option value="any">All</option>
-  <option value="overabundant">Overabundant</option>
-  <option value="starting">Starting</option>
-  <!--<option value="both">Both</option>--> <!--No lake in both categories-->
-</select>
+<br>
+
+<div>
+
+<div style="position:relative;float:left;width:20%">
+<input type="checkbox" id="overabundant_filter" onchange="updateMarkers()" checked>Overabundant Lakes<br>
+<input type="checkbox" id="starting_filter" onchange="updateMarkers()" checked>Good Starting Lakes<br>
+<input type="checkbox" id="other_filter" onchange="updateMarkers()">Other Lakes<br>
+</div>
+
+<div style="position:relative;float:right;width:80%">
 
 Elevation:
 <select id="elevation_filter" name="elevation_filter" onchange="updateMarkers()">
@@ -111,6 +115,10 @@ County:
   <option value="King">King</option>
   <option value="Whatcom">Whatcom</option>
 </select>
+</div>
+</div>
+
+<br>
 
 <p></p>
 <b>Legend:</b>

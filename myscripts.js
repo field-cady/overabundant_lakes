@@ -45,6 +45,7 @@ var downloadDataAndRender = function(url) {
 var renderData = function(dat) {
   showTimestamp(dat["timestamp"]);
   addLakesToMap(dat["lakes"]);
+  updateMarkers();
 }
 
 var addLakesToMap = function(lakes) {
@@ -135,19 +136,21 @@ var getIconForLake = function(lk) {
 }
 
 var getFilterFunction = function() {
+  console.log('in getFilterFunction')
   // Reads current filter settings and returns a function that says whether
   // a lake passes those filters
 
   // Type
-  var type_filter_value = document.getElementById('type_filter').value
-  if (type_filter_value=='any') {
-    type_filter = function(lk){return true}
-  } else if (type_filter_value=='overabundant') {
-    type_filter = function(lk){return lk['overabundant']}
-  } else if (type_filter_value=='starting') {
-    type_filter = function(el){return lk['starting']}
-  } else if (type_filter_value=='both') {
-    type_filter = function(el){return lk['starting'] & lk['overabundant']}
+  var show_overabundant = document.getElementById('overabundant_filter').checked;
+  var show_starting = document.getElementById('starting_filter').checked;
+  var show_other = document.getElementById('other_filter').checked;
+  console.log('show_overabundant'); console.log(show_overabundant);
+  console.log('show_starting'); console.log(show_starting);
+  console.log('show_other'); console.log(show_other);
+  type_filter = function(lk) {
+    if (lk['starting'] & show_starting) return true;
+    if (lk['overabundant'] & show_overabundant) return true;
+    return show_other;
   }
   // Elevation
   var elevation_filter_value = document.getElementById('elevation_filter').value
@@ -189,10 +192,10 @@ var getFilterFunction = function() {
 // Top-level functions below this line
 
 var updateMarkers = function() {
+  filter_func = getFilterFunction()
   for (i=0; i<markers.length; i++) {
     m = markers[i];
     lk = m.lake;
-    filter_func = getFilterFunction()
     if (filter_func(lk)) {
       m.addTo(mymap);
     } else {
