@@ -19,12 +19,12 @@ var markers = [];
 // Functions for populating the map
 
 var initializeMap = function() {
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+  /*L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
       maxZoom: 18,
       id: 'mapbox.streets',
       accessToken: 'pk.eyJ1IjoiZmllbGRjYWR5IiwiYSI6ImNqd3Rmb2d3bjBkMDA0OW5yamYxNnRwdGwifQ.kBilx8iMkTn8RUyrO7ZHGA'
-  }).addTo(mymap);
+  }).addTo(mymap);*/
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(mymap);
@@ -49,14 +49,6 @@ var renderData = function(dat) {
 }
 
 var addLakesToMap = function(lakes) {
-  populateMarkers(lakes);
-  /*for (i=0; i<lakes.length; i++) {
-    m = markers[i];
-    if (~m.addTo(mymap).openPopup().closePopup();
-  };*/
-}
-
-var populateMarkers = function(lakes) {
   for (i=0; i<lakes.length; i++) {
     lk = lakes[i];
     icon = getIconForLake(lk);
@@ -124,14 +116,7 @@ var getIconForLake = function(lk) {
   } else {
     color='grey'
   }
-  var icon = iconMap[color];/*new L.Icon({
-    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-'+color+'.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-  });*/
+  var icon = iconMap[color];
   return icon;
 }
 
@@ -144,9 +129,6 @@ var getFilterFunction = function() {
   var show_overabundant = document.getElementById('overabundant_filter').checked;
   var show_starting = document.getElementById('starting_filter').checked;
   var show_other = document.getElementById('other_filter').checked;
-  console.log('show_overabundant'); console.log(show_overabundant);
-  console.log('show_starting'); console.log(show_starting);
-  console.log('show_other'); console.log(show_other);
   type_filter = function(lk) {
     if (lk['starting'] & show_starting) return true;
     if (lk['overabundant'] & show_overabundant) return true;
@@ -215,7 +197,6 @@ if (location.origin === "file://") {
     data = DEFAULT_DATA
     renderData(data);
   } else {
-    //downloadDataAndRender("data.json";)
     downloadDataAndRender("data/overabundant_lakes.json");
     downloadDataAndRender("data/starting_lakes.json");
     downloadDataAndRender("data/normal_lakes.json");
