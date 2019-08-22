@@ -19,12 +19,12 @@ var markers = [];
 // Functions for populating the map
 
 var initializeMap = function() {
-  /*L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
       maxZoom: 18,
       id: 'mapbox.streets',
       accessToken: 'pk.eyJ1IjoiZmllbGRjYWR5IiwiYSI6ImNqd3Rmb2d3bjBkMDA0OW5yamYxNnRwdGwifQ.kBilx8iMkTn8RUyrO7ZHGA'
-  }).addTo(mymap);*/
+  }).addTo(mymap);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(mymap);
@@ -192,6 +192,15 @@ var showTimestamp = function(timestamp) {
   timestamp_div.appendChild(content);
 }
 
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
 initializeMap()
 if (location.origin === "file://") {
     data = DEFAULT_DATA
@@ -199,5 +208,6 @@ if (location.origin === "file://") {
   } else {
     downloadDataAndRender("data/overabundant_lakes.json");
     downloadDataAndRender("data/starting_lakes.json");
+    sleep(500);
     downloadDataAndRender("data/normal_lakes.json");
 }
