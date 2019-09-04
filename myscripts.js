@@ -11,7 +11,7 @@ var DEFAULT_DATA = {"lakes": [
 
 var data = null;
 
-var mymap = L.map('mapid').setView([47.596, -120.661], 7);
+var mymap = null;//L.map('mapid').setView([47.596, -120.661], 7);
 
 
 var markers = [];
@@ -19,7 +19,7 @@ var markers = [];
 // Functions for populating the map
 
 var initializeMap = function() {
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+  /*L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
       maxZoom: 18,
       id: 'mapbox.streets',
@@ -27,7 +27,15 @@ var initializeMap = function() {
   }).addTo(mymap);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(mymap);
+  }).addTo(mymap);*/
+  mapboxgl.accessToken = "pk.eyJ1IjoiZmllbGRjYWR5IiwiYSI6ImNqd3Rmb2d3bjBkMDA0OW5yamYxNnRwdGwifQ.kBilx8iMkTn8RUyrO7ZHGA";
+  mymap = new mapboxgl.Map({
+    container: 'mapid',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [-120.661, 47.596],
+    zoom: 5
+  });
+  //mymap.setView([47.596, -120.661], 7);
 }
 
 var downloadDataAndRender = function(url) {
@@ -52,11 +60,28 @@ var addLakesToMap = function(lakes) {
   for (i=0; i<lakes.length; i++) {
     lk = lakes[i];
     icon = getIconForLake(lk);
-    m = L.marker([lk['lat'], lk['lon']], {icon: icon}).bindPopup(lake2marker_html(lk));
+    //m = L.marker([lk['lat'], lk['lon']], {icon: icon}).bindPopup(lake2marker_html(lk));
+    console.log(lk['lat'])
+    console.log(lk['lon'])
+    if (lk['starting'] & lk['overabundant']) {
+      color='violet'
+    } else if (lk['starting'] & (!lk['overabundant'])) {
+      color='red'
+    } else if ((!lk['starting']) & lk['overabundant']) {
+      color='blue'
+    } else {
+      color='grey'
+    }
+    m = new mapboxgl.Marker({color: color})
+      .setLngLat([lk['lon'], lk['lat']]);
+    var popup = new mapboxgl.Popup().setHTML(lake2marker_html(lk));
+    m.setPopup(popup);
+    m.addTo(mymap);
+    //
     m.lake = lk;
     lk.marker = m;
     markers.push(m);
-    m.addTo(mymap).openPopup().closePopup();
+    //m.openPopup().closePopup();
   };
 }
 
@@ -181,7 +206,7 @@ var updateMarkers = function() {
     if (filter_func(lk)) {
       m.addTo(mymap);
     } else {
-      m.removeFrom(mymap);
+      m.remove(mymap);
     }
   };
 }
@@ -202,6 +227,7 @@ function sleep(milliseconds) {
 }
 
 initializeMap()
+
 if (location.origin === "file://") {
     data = DEFAULT_DATA
     renderData(data);

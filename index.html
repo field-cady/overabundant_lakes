@@ -21,6 +21,10 @@
 
 <!--<script src="https://code.angularjs.org/1.6.9/angular.js"></script>-->
 
+<!--testing-->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.0/mapbox-gl.css' rel='stylesheet' />
+
 
 </head>
 
@@ -75,7 +79,7 @@ or good starting lakes.
 <div style="position:relative;float:left;width:20%">
 <input type="checkbox" id="overabundant_filter" onchange="updateMarkers()" checked>Overabundant Lakes<br>
 <input type="checkbox" id="starting_filter" onchange="updateMarkers()" checked>Good Starting Lakes<br>
-<input type="checkbox" id="other_filter" onchange="updateMarkers()">Other Lakes<br>
+<input type="checkbox" id="other_filter" onchange="updateMarkers()">All<br>
 </div>
 
 <div style="position:relative;float:right;width:80%">
@@ -126,7 +130,12 @@ County:
 <img src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png" style="height:3%">Overstocked
 <img src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png" style="height:3%">Other
 
+<!--
 <div style="height:70%;width:70%" id="mapid"></div>
+-->
+<!--testing-->
+<div id='mapid' style='width: 400px; height: 300px;'></div>
+
 
 This site was created as a project by
 <a href="http://www.fieldcady.com">Field Cady</a>.
