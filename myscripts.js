@@ -9,38 +9,26 @@ var DEFAULT_DATA = {"lakes": [
   {"overabundant":true, "starting":true, "name": "Bannock - Middle", "url": "https://wdfw.wa.gov/fishing/locations/high-lakes/bannock-middle", "elevation": 5929.0, "county": "Chelan", "lat": 48.260666, "lon": -120.972715, "acres": "6.90"}
 ]}
 
-var data = null;
-
-var mymap = null;//L.map('mapid').setView([47.596, -120.661], 7);
-
-
+//var data = null;
+var mymap = null;
 var markers = [];
 
 // Functions for populating the map
 
 var initializeMap = function() {
-  /*L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
-      id: 'mapbox.streets',
-      accessToken: 'pk.eyJ1IjoiZmllbGRjYWR5IiwiYSI6ImNqd3Rmb2d3bjBkMDA0OW5yamYxNnRwdGwifQ.kBilx8iMkTn8RUyrO7ZHGA'
-  }).addTo(mymap);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(mymap);*/
   mapboxgl.accessToken = "pk.eyJ1IjoiZmllbGRjYWR5IiwiYSI6ImNqd3Rmb2d3bjBkMDA0OW5yamYxNnRwdGwifQ.kBilx8iMkTn8RUyrO7ZHGA";
   mymap = new mapboxgl.Map({
     container: 'mapid',
     style: 'mapbox://styles/mapbox/streets-v9',
     center: [-120.661, 47.596],
-    zoom: 5
+    zoom: 5,
+    maxZoom: 13,
+    maxBounds: [[-130, 45], [-110, 50]]
   });
-  //mymap.setView([47.596, -120.661], 7);
 }
 
 var downloadDataAndRender = function(url) {
     var xhr = new XMLHttpRequest();
-    //url = "data.json";
     xhr.open('GET', url, true);
     xhr.responseType = 'json';
     xhr.onload = function() {
@@ -59,10 +47,6 @@ var renderData = function(dat) {
 var addLakesToMap = function(lakes) {
   for (i=0; i<lakes.length; i++) {
     lk = lakes[i];
-    icon = getIconForLake(lk);
-    //m = L.marker([lk['lat'], lk['lon']], {icon: icon}).bindPopup(lake2marker_html(lk));
-    console.log(lk['lat'])
-    console.log(lk['lon'])
     if (lk['starting'] & lk['overabundant']) {
       color='violet'
     } else if (lk['starting'] & (!lk['overabundant'])) {
@@ -81,7 +65,6 @@ var addLakesToMap = function(lakes) {
     m.lake = lk;
     lk.marker = m;
     markers.push(m);
-    //m.openPopup().closePopup();
   };
 }
 
@@ -94,55 +77,6 @@ var lake2marker_html = function(lk) {
   county = '<p>County: '+lk['county']+'</p>'
   size = '<p>Size: '+String(lk['acres'])+' Acres</p>'
   return clickable_name+elevation+county+size;
-}
-
-var iconMap = {
-  violet: new L.Icon({
-    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-  }),
-  red: new L.Icon({
-    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-  }),
-  blue: new L.Icon({
-    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-  }),
-  grey: new L.Icon({
-    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-  }),
-}
-
-var getIconForLake = function(lk) {
-  if (lk['starting'] & lk['overabundant']) {
-    color='violet'
-  } else if (lk['starting'] & (!lk['overabundant'])) {
-    color='red'
-  } else if ((!lk['starting']) & lk['overabundant']) {
-    color='blue'
-  } else {
-    color='grey'
-  }
-  var icon = iconMap[color];
-  return icon;
 }
 
 var getFilterFunction = function() {
@@ -229,8 +163,8 @@ function sleep(milliseconds) {
 initializeMap()
 
 if (location.origin === "file://") {
-    data = DEFAULT_DATA
-    renderData(data);
+    //data = DEFAULT_DATA
+    renderData(DEFAULT_DATA);
   } else {
     downloadDataAndRender("data/overabundant_lakes.json");
     downloadDataAndRender("data/starting_lakes.json");
