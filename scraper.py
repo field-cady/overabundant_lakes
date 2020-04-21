@@ -66,6 +66,50 @@ def get_data():
         timestamp=timestamp
     )
 
+'''
+
+
+def lake2marker_html(lk):
+  link = '<a target=\"_blank\" href=\"'+lk['url']+'\">WDFW Page</a>'
+  elevation = '<p>Elevation: '+str(round(lk['elevation']))+'ft' + '</p>'
+  county = '<p>County: '+lk['county']+'</p>'
+  size = '<p>Size: '+str(lk['acres'])+' Acres</p>'
+  return elevation + county + size + link
+  #return '<a href=\"http://www.cnn.com\">foo</a>'
+
+def get_kml(lakes):
+  kml = simplekml.Kml()
+  kml.parsetext(parse=False)
+  for lk in lakes:
+    desc = lake2marker_html(lk)
+    coords = [(lk['lon'],lk['lat'])]
+    pnt = kml.newpoint(name=lk['name'], coords=coords, description=desc)
+  return kml
+
+starting_kml = get_kml(starting_lakes)
+starting_kml.save("starting_lakes.kml")
+
+overabundant_kml = get_kml(overabundant_lakes)
+overabundant_kml.save("overabundant_lakes.kml")
+
+all_kml = get_kml(all_lakes)#[130:131])
+all_kml.save("all_lakes.kml")
+
+
+
+xs = starting_lakes
+
+kml = simplekml.Kml()
+kml.parsetext(parse=False)
+pnt = kml.newpoint(name='A Point', description='<a href=\"http://www.cnn.com\">foo</a>')
+kml.save("botanicalgarden.kml")
+
+
+
+
+
+'''
+
 if __name__ == '__main__':
     data = get_data()
     output = json.dumps(dict(lakes=data['lakes'], timestamp=data['timestamp']))#data)

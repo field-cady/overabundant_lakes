@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <Placemark id="3">
+            <name>Ann Lake</name>
+            <description>
+                <p>Elevation: 5480ft</p>
+                <p>County: Chelan</p>
+                <p>Size: 18.50 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/ann-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="2">
+                <coordinates>-120.757152,48.506692,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="5">
+            <name>Annette Lake</name>
+            <description>
+                <p>Elevation: 3624ft</p>
+                <p>County: King</p>
+                <p>Size: 18.40 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/annette-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="4">
+                <coordinates>-121.474328,47.358964,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="7">
+            <name>Arbuthnot</name>
+            <description>
+                <p>Elevation: 4770ft</p>
+                <p>County: Whatcom</p>
+                <p>Size: 6.90 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/arbuthnot" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="6">
+                <coordinates>-121.723004,48.859145,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="9">
+            <name>Bear Lake</name>
+            <description>
+                <p>Elevation: 4639ft</p>
+                <p>County: Yakima</p>
+                <p>Size: 3.90 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/bear-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="8">
+                <coordinates>-121.019826,46.726766,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11">
+            <name>Bear Lake (King)</name>
+            <description>
+                <p>Elevation: 3614ft</p>
+                <p>County: King</p>
+                <p>Size: 45.80 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/bear-lake-king" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="10">
+                <coordinates>-121.394876,47.573663,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="13">
+            <name>Bertha May Lake</name>
+            <description>
+                <p>Elevation: 4059ft</p>
+                <p>County: Lewis</p>
+                <p>Size: 19.20 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/bertha-may-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="12">
+                <coordinates>-121.936355,46.69847,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="15">
+            <name>Big Mosquito Lake</name>
+            <description>
+                <p>Elevation: 3896ft</p>
+                <p>County: Skamania</p>
+                <p>Size: 26.60 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/big-mosquito-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="14">
+                <coordinates>-121.759193,46.1279,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="17">
+            <name>Blue Lake (Lewis)</name>
+            <description>
+                <p>Elevation: 4062ft</p>
+                <p>County: Lewis</p>
+                <p>Size: 121.70 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/blue-lake-lewis" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="16">
+                <coordinates>-121.700618,46.39737,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="19">
+            <name>Bumping Lake</name>
+            <description>
+                <p>Elevation: 3430ft</p>
+                <p>County: Yakima</p>
+                <p>Size: 1353.50 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/bumping-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="18">
+                <coordinates>-121.331249,46.846944,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="21">
+            <name>Byrne</name>
+            <description>
+                <p>Elevation: 5548ft</p>
+                <p>County: Snohomish</p>
+                <p>Size: 48.80 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/byrne" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="20">
+                <coordinates>-121.215561,48.111144,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="23">
+            <name>Coal Lake</name>
+            <description>
+                <p>Elevation: 3384ft</p>
+                <p>County: Snohomish</p>
+                <p>Size: 6.60 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/coal-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="22">
+                <coordinates>-121.516638,48.112306,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="25">
+            <name>Cooper Lake</name>
+            <description>
+                <p>Elevation: 2792ft</p>
+                <p>County: Kittitas</p>
+                <p>Size: 129.40 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/cooper-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="24">
+                <coordinates>-121.176924,47.426187,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="27">
+            <name>Copper Lake</name>
+            <description>
+                <p>Elevation: 3965ft</p>
+                <p>County: King</p>
+                <p>Size: 132.00 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/copper-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="26">
+                <coordinates>-121.333052,47.602358,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="29">
+            <name>Cora Lake</name>
+            <description>
+                <p>Elevation: 3834ft</p>
+                <p>County: Lewis</p>
+                <p>Size: 25.70 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/cora-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="28">
+                <coordinates>-121.890534,46.68804,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="31">
+            <name>Cougar</name>
+            <description>
+                <p>Elevation: 5019ft</p>
+                <p>County: Yakima</p>
+                <p>Size: 78.40 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/cougar" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="30">
+                <coordinates>-121.440605,46.812707,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="33">
+            <name>Deception Lakes</name>
+            <description>
+                <p>Elevation: 5057ft</p>
+                <p>County: King</p>
+                <p>Size: 18.20 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/deception-lakes" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="32">
+                <coordinates>-121.139732,47.634804,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="35">
+            <name>Deep Lake</name>
+            <description>
+                <p>Elevation: 4386ft</p>
+                <p>County: Kittitas</p>
+                <p>Size: 39.90 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/deep-lake-kittitas" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="34">
+                <coordinates>-121.141979,47.54655,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="37">
+            <name>Dog Lake</name>
+            <description>
+                <p>Elevation: 4211ft</p>
+                <p>County: Yakima</p>
+                <p>Size: 59.90 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/dog-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="36">
+                <coordinates>-121.359731,46.657375,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="39">
+            <name>Dorothy Lake</name>
+            <description>
+                <p>Elevation: 3062ft</p>
+                <p>County: King</p>
+                <p>Size: 260.90 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/dorothy-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="38">
+                <coordinates>-121.38593,47.579806,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="41">
+            <name>Fisher Lake</name>
+            <description>
+                <p>Elevation: 4767ft</p>
+                <p>County: King</p>
+                <p>Size: 56.40 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/fisher-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="40">
+                <coordinates>-121.219739,47.638719,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="43">
+            <name>Glacier Lake</name>
+            <description>
+                <p>Elevation: 4810ft</p>
+                <p>County: King</p>
+                <p>Size: 50.20 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/glacier-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="42">
+                <coordinates>-121.144188,47.657111,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="45">
+            <name>Goose Lake</name>
+            <description>
+                <p>Elevation: 3110ft</p>
+                <p>County: Skamania</p>
+                <p>Size: 73.60 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/goose-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="44">
+                <coordinates>-121.764446,45.941185,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="47">
+            <name>Granite Lake</name>
+            <description>
+                <p>Elevation: 4179ft</p>
+                <p>County: Lewis</p>
+                <p>Size: 26.70 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/granite-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="46">
+                <coordinates>-121.926074,46.696858,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="49">
+            <name>Hayes</name>
+            <description>
+                <p>Elevation: 4782ft</p>
+                <p>County: Whatcom</p>
+                <p>Size: 12.40 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/hayes" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="48">
+                <coordinates>-121.721621,48.857338,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="51">
+            <name>Heather Lake</name>
+            <description>
+                <p>Elevation: 3957ft</p>
+                <p>County: Chelan</p>
+                <p>Size: 83.80 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/heather-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="50">
+                <coordinates>-121.1309,47.855505,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53">
+            <name>Hester Lake</name>
+            <description>
+                <p>Elevation: 3890ft</p>
+                <p>County: King</p>
+                <p>Size: 64.80 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/hester-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="52">
+                <coordinates>-121.393627,47.508764,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="55">
+            <name>Hope</name>
+            <description>
+                <p>Elevation: 4390ft</p>
+                <p>County: Chelan</p>
+                <p>Size: 1.40 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/hope" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="54">
+                <coordinates>-121.09013,47.699054,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="57">
+            <name>Island (Skamania)</name>
+            <description>
+                <p>Elevation: 4824ft</p>
+                <p>County: Skamania</p>
+                <p>Size: 9.50 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/island-skamania1" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="56">
+                <coordinates>-122.157965,46.352533,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="59">
+            <name>Janus Lake</name>
+            <description>
+                <p>Elevation: 4150ft</p>
+                <p>County: Snohomish</p>
+                <p>Size: 28.40 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/janus-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="58">
+                <coordinates>-121.094914,47.827248,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="61">
+            <name>Joe Lake</name>
+            <description>
+                <p>Elevation: 4628ft</p>
+                <p>County: Kittitas</p>
+                <p>Size: 28.70 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/joe-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="60">
+                <coordinates>-121.337478,47.467748,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="63">
+            <name>Knuppenburg Lake</name>
+            <description>
+                <p>Elevation: 4105ft</p>
+                <p>County: Lewis</p>
+                <p>Size: 2.30 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/knuppenburg-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="62">
+                <coordinates>-121.41798,46.628678,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="65">
+            <name>Lodge Lake</name>
+            <description>
+                <p>Elevation: 3130ft</p>
+                <p>County: King</p>
+                <p>Size: 9.00 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/lodge-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="64">
+                <coordinates>-121.430161,47.409483,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="67">
+            <name>Lost Lake (Chelan)</name>
+            <description>
+                <p>Elevation: 4934ft</p>
+                <p>County: Chelan</p>
+                <p>Size: 25.90 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/lost-lake-chelan" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="66">
+                <coordinates>-120.921433,47.814528,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="69">
+            <name>Lower Ashland Lake</name>
+            <description>
+                <p>Elevation: 2674ft</p>
+                <p>County: Snohomish</p>
+                <p>Size: 10.70 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/lower-ashland-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="68">
+                <coordinates>-121.726507,48.027604,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="71">
+            <name>Lower Loch Katrine</name>
+            <description>
+                <p>Elevation: 2904ft</p>
+                <p>County: King</p>
+                <p>Size: 49.70 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/lower-loch-katrine" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="70">
+                <coordinates>-121.606018,47.636739,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="73">
+            <name>Lower Tuscohatchie Lake</name>
+            <description>
+                <p>Elevation: 3424ft</p>
+                <p>County: King</p>
+                <p>Size: 30.60 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/lower-tuscohatchie-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="72">
+                <coordinates>-121.496534,47.438792,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="75">
+            <name>Manastash Lake</name>
+            <description>
+                <p>Elevation: 5067ft</p>
+                <p>County: Kittitas</p>
+                <p>Size: 28.30 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/manastash-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="74">
+                <coordinates>-120.944448,46.996981,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="77">
+            <name>Marmot Lake</name>
+            <description>
+                <p>Elevation: 4935ft</p>
+                <p>County: King</p>
+                <p>Size: 128.00 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/marmot-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="76">
+                <coordinates>-121.188206,47.612094,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="79">
+            <name>Marten Lake</name>
+            <description>
+                <p>Elevation: 2963ft</p>
+                <p>County: King</p>
+                <p>Size: 37.70 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/marten-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="78">
+                <coordinates>-121.51467,47.59268,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="81">
+            <name>Mazama</name>
+            <description>
+                <p>Elevation: 4708ft</p>
+                <p>County: Whatcom</p>
+                <p>Size: 1.60 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/mazama" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="80">
+                <coordinates>-121.722751,48.850366,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="83">
+            <name>Newaukum Lake</name>
+            <description>
+                <p>Elevation: 2983ft</p>
+                <p>County: Lewis</p>
+                <p>Size: 16.80 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/newaukum-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="82">
+                <coordinates>-122.474702,46.664601,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85">
+            <name>Pear</name>
+            <description>
+                <p>Elevation: 4813ft</p>
+                <p>County: Snohomish</p>
+                <p>Size: 29.30 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/pear" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="84">
+                <coordinates>-121.171111,47.879287,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="87">
+            <name>Pete Lake</name>
+            <description>
+                <p>Elevation: 2984ft</p>
+                <p>County: Kittitas</p>
+                <p>Size: 36.50 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/pete-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="86">
+                <coordinates>-121.235953,47.475873,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="89">
+            <name>Philippa</name>
+            <description>
+                <p>Elevation: 3350ft</p>
+                <p>County: King</p>
+                <p>Size: 121.60 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/philippa" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="88">
+                <coordinates>-121.620167,47.610263,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="91">
+            <name>Rainy Lake</name>
+            <description>
+                <p>Elevation: 4795ft</p>
+                <p>County: Chelan</p>
+                <p>Size: 53.10 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/rainy-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="90">
+                <coordinates>-120.737852,48.501215,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="93">
+            <name>Rimrock Lake</name>
+            <description>
+                <p>Elevation: 2926ft</p>
+                <p>County: Yakima</p>
+                <p>Size: 2546.30 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/rimrock-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="92">
+                <coordinates>-121.159766,46.63891,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="95">
+            <name>Rockdale Lake</name>
+            <description>
+                <p>Elevation: 3548ft</p>
+                <p>County: King</p>
+                <p>Size: 2.80 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/rockdale-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="94">
+                <coordinates>-121.430084,47.389713,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="97">
+            <name>Scatter Lake</name>
+            <description>
+                <p>Elevation: 7052ft</p>
+                <p>County: Okanogan</p>
+                <p>Size: 6.90 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/scatter-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="96">
+                <coordinates>-120.517377,48.470841,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="99">
+            <name>Schaefer Lake</name>
+            <description>
+                <p>Elevation: 5135ft</p>
+                <p>County: Chelan</p>
+                <p>Size: 80.90 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/schaefer-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="98">
+                <coordinates>-120.84261,47.962722,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="101">
+            <name>Serene</name>
+            <description>
+                <p>Elevation: 2525ft</p>
+                <p>County: Snohomish</p>
+                <p>Size: 49.90 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/serene" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="100">
+                <coordinates>-121.570379,47.781821,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="103">
+            <name>Slide Lake</name>
+            <description>
+                <p>Elevation: 3114ft</p>
+                <p>County: Skagit</p>
+                <p>Size: 30.60 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/slide-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="102">
+                <coordinates>-121.348826,48.43071,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="105">
+            <name>Snoqualmie Lake</name>
+            <description>
+                <p>Elevation: 3151ft</p>
+                <p>County: King</p>
+                <p>Size: 123.60 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/snoqualmie-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="104">
+                <coordinates>-121.412831,47.566558,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="107">
+            <name>Snow Lake (King)</name>
+            <description>
+                <p>Elevation: 4020ft</p>
+                <p>County: King</p>
+                <p>Size: 152.90 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/snow-lake-king" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="106">
+                <coordinates>-121.456444,47.467698,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="109">
+            <name>Spectacle Lake</name>
+            <description>
+                <p>Elevation: 4264ft</p>
+                <p>County: Kittitas</p>
+                <p>Size: 77.80 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/spectacle-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="108">
+                <coordinates>-121.280689,47.461903,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="111">
+            <name>Square</name>
+            <description>
+                <p>Elevation: 4994ft</p>
+                <p>County: Chelan</p>
+                <p>Size: 73.30 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/square" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="110">
+                <coordinates>-121.120015,47.646913,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="113">
+            <name>Stirrup Lake</name>
+            <description>
+                <p>Elevation: 3550ft</p>
+                <p>County: Kittitas</p>
+                <p>Size: 8.90 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/stirrup-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="112">
+                <coordinates>-121.424478,47.295299,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="115">
+            <name>Summit Lake (Pierce)</name>
+            <description>
+                <p>Elevation: 5443ft</p>
+                <p>County: Pierce</p>
+                <p>Size: 21.50 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/summit-lake-pierce" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="114">
+                <coordinates>-121.831477,47.039674,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="117">
+            <name>Surprise Lake</name>
+            <description>
+                <p>Elevation: 4512ft</p>
+                <p>County: King</p>
+                <p>Size: 22.60 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/surprise-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="116">
+                <coordinates>-121.140727,47.66798,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="119">
+            <name>Swamp Lake</name>
+            <description>
+                <p>Elevation: 4799ft</p>
+                <p>County: Yakima</p>
+                <p>Size: 50.50 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/swamp-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="118">
+                <coordinates>-121.433422,46.833117,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="121">
+            <name>Trap</name>
+            <description>
+                <p>Elevation: 5175ft</p>
+                <p>County: Chelan</p>
+                <p>Size: 12.60 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/trap" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="120">
+                <coordinates>-121.12398,47.674429,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="123">
+            <name>Twin Sisters - Big</name>
+            <description>
+                <p>Elevation: 5157ft</p>
+                <p>County: Yakima</p>
+                <p>Size: 103.00 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/twin-sisters-big" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="122">
+                <coordinates>-121.381703,46.739113,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="125">
+            <name>Twin Sisters - Little</name>
+            <description>
+                <p>Elevation: 5188ft</p>
+                <p>County: Yakima</p>
+                <p>Size: 40.40 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/twin-sisters-little" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="124">
+                <coordinates>-121.369921,46.735167,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="127">
+            <name>Upper (Big) Greider Lake</name>
+            <description>
+                <p>Elevation: 2936ft</p>
+                <p>County: Snohomish</p>
+                <p>Size: 59.00 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/upper-big-greider-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="126">
+                <coordinates>-121.582547,47.954793,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="129">
+            <name>Valhalla</name>
+            <description>
+                <p>Elevation: 4834ft</p>
+                <p>County: Chelan</p>
+                <p>Size: 24.00 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/valhalla" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="128">
+                <coordinates>-121.10084,47.78976,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="131">
+            <name>Walupt</name>
+            <description>
+                <p>Elevation: 3930ft</p>
+                <p>County: Lewis</p>
+                <p>Size: 381.60 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/walupt" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="130">
+                <coordinates>-121.463168,46.417023,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="133">
+            <name>Waptus Lake</name>
+            <description>
+                <p>Elevation: 2967ft</p>
+                <p>County: Kittitas</p>
+                <p>Size: 255.20 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/waptus-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="132">
+                <coordinates>-121.177974,47.50341,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="135">
+            <name>Wolverine Lake</name>
+            <description>
+                <p>Elevation: 5045ft</p>
+                <p>County: Chelan</p>
+                <p>Size: 8.50 Acres</p>
+                <a href="https://wdfw.wa.gov/fishing/locations/high-lakes/wolverine-lake" target="_blank">WDFW Page</a>
+            </description>
+            <Point id="134">
+                <coordinates>-121.112593,47.650614,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
