@@ -66,7 +66,6 @@ def get_data():
         timestamp=timestamp
     )
 
-'''
 
 
 def lake2marker_html(lk):
@@ -75,7 +74,6 @@ def lake2marker_html(lk):
   county = '<p>County: '+lk['county']+'</p>'
   size = '<p>Size: '+str(lk['acres'])+' Acres</p>'
   return elevation + county + size + link
-  #return '<a href=\"http://www.cnn.com\">foo</a>'
 
 def get_kml(lakes):
   kml = simplekml.Kml()
@@ -83,8 +81,10 @@ def get_kml(lakes):
   for lk in lakes:
     desc = lake2marker_html(lk)
     coords = [(lk['lon'],lk['lat'])]
-    pnt = kml.newpoint(name=lk['name'], coords=coords, description=desc)
+    pnt = kml.newpoint(name=lk['name'].replace('&', ' and '), coords=coords, description=desc)
   return kml
+
+'''
 
 starting_kml = get_kml(starting_lakes)
 starting_kml.save("starting_lakes.kml")
@@ -97,13 +97,6 @@ all_kml.save("all_lakes.kml")
 
 
 
-xs = starting_lakes
-
-kml = simplekml.Kml()
-kml.parsetext(parse=False)
-pnt = kml.newpoint(name='A Point', description='<a href=\"http://www.cnn.com\">foo</a>')
-kml.save("botanicalgarden.kml")
-
 
 
 
@@ -112,6 +105,7 @@ kml.save("botanicalgarden.kml")
 
 if __name__ == '__main__':
     data = get_data()
+	# Store JSON
     output = json.dumps(dict(lakes=data['lakes'], timestamp=data['timestamp']))#data)
     open('data.json', 'w').write(output)
     open('data/starting_lakes.json', 'w').write(json.dumps(
@@ -123,3 +117,11 @@ if __name__ == '__main__':
     open('data/normal_lakes.json', 'w').write(json.dumps(
         dict(lakes=data['normal_lakes'], timestamp=data['timestamp'])
     ))
+	# Store KML
+	starting_kml = get_kml(data['starting_lakes'])
+	starting_kml.save("data/starting_lakes.kml")
+	overabundant_kml = get_kml(data['overabundant_lakes'])
+	overabundant_kml.save("data/overabundant_lakes.kml")
+	all_kml = get_kml(data['lakes'])
+	all_kml.save("data/all_lakes.kml")
+
