@@ -17,13 +17,15 @@ def parse_table_from_page(txt):
 
 def html_to_record(r):
     # Turn HTML object for table row into a dict
-    name = next(r['name'].children).string
-    url = 'https://wdfw.wa.gov' + r['name'].findNext('a').get('href')
-    elevation = next(r['elevation'].children).string.split()[0]
-    county = next(r['county'].children).string.strip()
-    acres = next(r['acres'].children).string.strip().split()[0]
-    latlon = [x.string for x in r['location'].findAll('span')]
-    return dict(name=name, url=url, elevation=float(elevation), county=county, lat=float(latlon[0]), lon=float(latlon[1]), acres=acres)
+    try:
+      name = next(r['name'].children).string
+      url = 'https://wdfw.wa.gov' + r['name'].findNext('a').get('href')
+      elevation = next(r['elevation'].children).string.split()[0]
+      county = next(r['county'].children).string.strip()
+      acres = next(r['acres'].children).string.strip().split()[0]
+      latlon = [x.string for x in r['location'].findAll('span')]
+      return dict(name=name, url=url, elevation=float(elevation), county=county, lat=float(latlon[0]), lon=float(latlon[1]), acres=acres)
+    except: return None
 
 starting_url_base = 'https://wdfw.wa.gov/fishing/locations/high-lakes/getting-started?name=&county=All&order=title&sort=asc&page='
 
@@ -42,6 +44,7 @@ def get_lakes_from_all_pages(url_base):
         try: rows = parse_table_from_page(txt)
         except: break
         records = [html_to_record(rw) for rw in rows if rw]
+        records = [r for r in records if r]
         if len(records)==0: break
         all_records.extend(records)
         i += 1
@@ -117,11 +120,11 @@ if __name__ == '__main__':
     open('data/normal_lakes.json', 'w').write(json.dumps(
         dict(lakes=data['normal_lakes'], timestamp=data['timestamp'])
     ))
-	# Store KML
-	starting_kml = get_kml(data['starting_lakes'])
-	starting_kml.save("data/starting_lakes.kml")
-	overabundant_kml = get_kml(data['overabundant_lakes'])
-	overabundant_kml.save("data/overabundant_lakes.kml")
-	all_kml = get_kml(data['lakes'])
-	all_kml.save("data/all_lakes.kml")
+    # Store KML
+    starting_kml = get_kml(data['starting_lakes'])
+    starting_kml.save("data/starting_lakes.kml")
+    overabundant_kml = get_kml(data['overabundant_lakes'])
+    overabundant_kml.save("data/overabundant_lakes.kml")
+    all_kml = get_kml(data['lakes'])
+    all_kml.save("data/all_lakes.kml")
 
