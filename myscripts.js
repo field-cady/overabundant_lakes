@@ -47,6 +47,7 @@ var renderData = function(dat) {
 var addLakesToMap = function(lakes) {
   for (i=0; i<lakes.length; i++) {
     lk = lakes[i];
+    console.log(lk);
     if (lk['starting'] & lk['overabundant']) {
       color='violet'
     } else if (lk['starting'] & (!lk['overabundant'])) {
