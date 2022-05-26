@@ -54,7 +54,7 @@ var isMobile = function() {
 
 var addLakesToMap = function(lakes) {
   if (isMobile()) {
-      scl = 3
+      scl = 2
   } else {
       scl = 1
   }
