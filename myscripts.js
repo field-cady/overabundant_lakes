@@ -44,10 +44,23 @@ var renderData = function(dat) {
   updateMarkers();
 }
 
+var isMobile = function() {
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    return true;
+  }else{
+    return false;
+  }
+}
+
 var addLakesToMap = function(lakes) {
+  if (isMobile()) {
+      scl = 3
+  } else {
+      scl = 1
+  }
   for (i=0; i<lakes.length; i++) {
     lk = lakes[i];
-    console.log(lk);
+    //console.log(lk);
     if (lk['starting'] & lk['overabundant']) {
       color='violet'
     } else if (lk['starting'] & (!lk['overabundant'])) {
@@ -57,8 +70,11 @@ var addLakesToMap = function(lakes) {
     } else {
       color='grey'
     }
-    m = new mapboxgl.Marker({color: color})
-      .setLngLat([lk['lon'], lk['lat']]);
+    //m = new mapboxgl.Marker({color: color, size: 'small'})
+    m = new mapboxgl.Marker({color: color, scale: scl})
+    console.log('FOO')
+    m.setLngLat([lk['lon'], lk['lat']]);
+    //m.classList.add('marker');
     var popup = new mapboxgl.Popup().setHTML(lake2marker_html(lk));
     m.setPopup(popup);
     m.addTo(mymap);
