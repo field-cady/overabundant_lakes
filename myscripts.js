@@ -2,11 +2,11 @@
 // Global Variables
 
 var DEFAULT_DATA = {"lakes": [
-  {"overabundant":true, "starting":true, "name": "Airplane", "url": "https://wdfw.wa.gov/fishing/locations/high-lakes/airplane", "elevation": 5305.0, "county": "Chelan", "lat": 48.002594, "lon": -121.006674, "acres": "9.40"},
-  {"overabundant":true, "starting":false, "name": "Arrowhead", "url": "https://wdfw.wa.gov/fishing/locations/high-lakes/arrowhead", "elevation": 4411.0, "county": "Skagit", "lat": 48.432548, "lon": -121.290053, "acres": "10.50"},
-  {"overabundant":false, "starting":true, "name": "Bagley - Upper", "url": "https://wdfw.wa.gov/fishing/locations/high-lakes/bagley-upper", "elevation": 4172.0, "county": "Whatcom", "lat": 48.860064, "lon": -121.684465, "acres": "3.80"},
-  {"overabundant":false, "starting":false, "name": "Baker (Thetis)", "url": "https://wdfw.wa.gov/fishing/locations/high-lakes/baker-thetis", "elevation": 4434.0, "county": "Kittitas", "lat": 47.351427, "lon": -121.301709, "acres": "4.70"},
-  {"overabundant":true, "starting":true, "name": "Bannock - Middle", "url": "https://wdfw.wa.gov/fishing/locations/high-lakes/bannock-middle", "elevation": 5929.0, "county": "Chelan", "lat": 48.260666, "lon": -120.972715, "acres": "6.90"}
+  {"overabundant":true, "starting":true, "name": "Airplane", "url": "https://wdfw.wa.gov/fishing/locations/high-lakes/airplane", "elevation": 5305.0, "county": "Chelan", "lat": 48.002594, "lon": -121.006674, "area": "9.40 Acres"},
+  {"overabundant":true, "starting":false, "name": "Arrowhead", "url": "https://wdfw.wa.gov/fishing/locations/high-lakes/arrowhead", "elevation": 4411.0, "county": "Skagit", "lat": 48.432548, "lon": -121.290053, "area": "10.50 Acres"},
+  {"overabundant":false, "starting":true, "name": "Bagley - Upper", "url": "https://wdfw.wa.gov/fishing/locations/high-lakes/bagley-upper", "elevation": 4172.0, "county": "Whatcom", "lat": 48.860064, "lon": -121.684465, "area": "3.80 Acres"},
+  {"overabundant":false, "starting":false, "name": "Baker (Thetis)", "url": "https://wdfw.wa.gov/fishing/locations/high-lakes/baker-thetis", "elevation": 4434.0, "county": "Kittitas", "lat": 47.351427, "lon": -121.301709, "area": "4.70 Acres"},
+  {"overabundant":true, "starting":true, "name": "Bannock - Middle", "url": "https://wdfw.wa.gov/fishing/locations/high-lakes/bannock-middle", "elevation": 5929.0, "county": "Chelan", "lat": 48.260666, "lon": -120.972715, "area": "6.90 Acres"}
 ]}
 
 //var data = null;
@@ -92,7 +92,7 @@ var lake2marker_html = function(lk) {
   clickable_name = '<a target="_blank" href="'+lk['url']+'">'+lk['name']+'</a>'
   elevation = '<p>Elevation: '+String(Math.round(lk['elevation']))+'ft'
   county = '<p>County: '+lk['county']+'</p>'
-  size = '<p>Size: '+String(lk['acres'])+' Acres</p>'
+  size = '<p>Size: '+String(lk['area'])+'</p>'
   return clickable_name+elevation+county+size;
 }
 
