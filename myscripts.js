@@ -110,7 +110,11 @@ var lake2marker_html = function(lk) {
   var elevation = '<p>Elevation: '+String(Math.round(lk['elevation']))+'ft'
   var county = '<p>County: '+lk['county']+'</p>'
   var size = '<p>Size: '+String(lk['area'])+'</p>'
-  return clickable_name+elevation+county+size;
+  var species = ''
+  if (lk['species'] && lk['species'].length > 0) {
+    species = '<p>Species: '+lk['species'].join(', ')+'</p>'
+  }
+  return clickable_name+elevation+county+size+species;
 }
 
 var getFilterFunction = function() {
@@ -129,6 +133,17 @@ var getFilterFunction = function() {
     return false;
   }
   
+  // Species
+  var species_filter_value = document.getElementById('species_filter') ? document.getElementById('species_filter').value : 'any';
+  var species_filter;
+  if (species_filter_value === 'any') {
+    species_filter = function(lk) { return true; }
+  } else {
+    species_filter = function(lk) { 
+      return lk['species'] && lk['species'].includes(species_filter_value); 
+    }
+  }
+
   // Elevation
   var elevation_filter_value = document.getElementById('elevation_filter').value
   var elevation_filter;
@@ -167,7 +182,7 @@ var getFilterFunction = function() {
   }
   
   return function(lk) {
-    return elevation_filter(lk.elevation) && size_filter(lk.area) && county_filter(lk.county) && type_filter(lk)
+    return elevation_filter(lk.elevation) && size_filter(lk.area) && county_filter(lk.county) && type_filter(lk) && species_filter(lk)
   }
 }
 
