@@ -1,175 +1,393 @@
-<head title="Overabundant Fish Lakes">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High Fish Lakes of Washington State</title>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-34354121-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-34354121-1');
-</script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34354121-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-34354121-1');
+  </script>
 
-<!-- Leaflet Maps -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
- <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
+  <!-- Leaflet Maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+     crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+     crossorigin=""></script>
 
-<link rel="icon" type="image/png" href="trout.png">
+  <link rel="icon" type="image/png" href="trout.png">
 
-
-<style>
-    .marker {
-width: 500px;
-height: 500px;
-}
-    </style>
+  <style>
+    :root {
+      --text-color: #334155;
+      --bg-color: #f8fafc;
+      --container-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --accent-color: #0284c7;
+      --info-color: #64748b;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1250px;
+      margin: 0 auto;
+      background: var(--container-bg);
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    header {
+      border-bottom: 2px solid var(--border-color);
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    h1 { 
+      color: #0f172a; 
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    p { margin-bottom: 1rem; }
+    a { color: var(--accent-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
     
+    .intro { 
+      font-size: 0.95rem; 
+      color: #64748b; 
+      margin-bottom: 20px; 
+      max-width: 900px; 
+      line-height: 1.4;
+    }
+
+    /* Map and Sidebar Layout */
+    .app-layout {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+      align-items: stretch;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      flex: 0 0 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .controls-panel {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .controls-panel h3 {
+      font-size: 1rem;
+      margin: 0 0 15px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #cbd5e1;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .controls-group {
+      margin-bottom: 18px;
+    }
+    .controls-group:last-child {
+      margin-bottom: 0;
+    }
+    .controls-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #475569;
+    }
+    select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background-color: white;
+      font-size: 0.9rem;
+      outline: none;
+      color: #334155;
+    }
+    select:focus { border-color: var(--accent-color); }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: normal !important;
+      position: relative;
+    }
+    .checkbox-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      accent-color: var(--accent-color);
+    }
+
+    /* Tooltip styles */
+    .info-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      background: var(--info-color);
+      color: white;
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: bold;
+      cursor: help;
+      margin-left: 4px;
+    }
+    
+    [data-tooltip] {
+      position: relative;
+    }
+    [data-tooltip]::before {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e293b;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      width: 220px;
+      line-height: 1.4;
+      text-align: left;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.2s;
+      z-index: 100;
+      pointer-events: none;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    [data-tooltip]:hover::before {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .legend-panel {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 15px;
+    }
+    .legend-panel h3 {
+      font-size: 0.85rem;
+      margin: 0 0 10px 0;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .legend-item { 
+      display: flex; 
+      align-items: center; 
+      gap: 10px; 
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      color: #475569;
+    }
+    .legend-item:last-child { margin-bottom: 0; }
+    .legend-item img { height: 18px; }
+    
+    /* Map Area */
+    .map-container {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    #mapid {
+      width: 100%;
+      height: 100%;
+      min-height: 650px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 1;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-links ul { margin: 5px 0 15px 0; padding-left: 20px; list-style-type: none; display: flex; gap: 15px; padding: 0;}
+    .footer-links li { margin-bottom: 0; }
+    .footer-links a { color: #64748b; text-decoration: underline; }
+    
+    #last_update_timestamp {
+      background: #f1f5f9;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    @media (max-width: 1000px) {
+      .app-layout { flex-direction: column; }
+      .sidebar { flex: none; width: 100%; }
+      #mapid { height: 500px; min-height: auto; }
+      .container { padding: 20px; }
+      .footer { flex-direction: column; align-items: flex-start; }
+      .footer-links ul { flex-direction: column; gap: 5px; }
+    }
+  </style>
 </head>
 
+<body>
 
+<div class="container">
+  <header>
+    <h1>High Fish Lakes of Washington State</h1>
+    <div id="last_update_timestamp">Updated: </div>
+  </header>
 
+  <p class="intro">
+    Alpine fishing locations in Washington State. Data sourced from the
+    <a href="https://wdfw.wa.gov/fishing/locations/high-lakes" target="_blank">WDFW</a>.
+  </p>
 
-<body ng-app="app">
+  <div class="app-layout">
+    
+    <div class="sidebar">
+      
+      <div class="controls-panel">
+        <h3>Map Filters</h3>
+        
+        <div class="controls-group">
+          <label>Lake Types</label>
+          
+          <label class="checkbox-item">
+            <input type="checkbox" id="overabundant_filter" onchange="updateMarkers()" checked>
+            Overabundant 
+            <span class="info-icon" data-tooltip="Too many fish for the ecosystem. WDFW encourages maximum harvest to help lake health.">?</span>
+          </label>
+          
+          <label class="checkbox-item">
+            <input type="checkbox" id="starting_filter" onchange="updateMarkers()" checked>
+            Good Starting 
+            <span class="info-icon" data-tooltip="Lakes with easier access, ideal for those new to alpine fishing.">?</span>
+          </label>
+          
+          <label class="checkbox-item">
+            <input type="checkbox" id="other_filter" onchange="updateMarkers()">
+            All Other Lakes
+          </label>
+        </div>
 
-<!--<h1 ng-controller="HelloWorldCtrl">{{message}}</h1>
-<script>
-    angular.module("app", []).controller("HelloWorldCtrl", function($scope) {
-    $scope.message="Overabundant Fish Lakes of Washington State"
-    } )
-</script>-->
+        <div class="controls-group">
+          <label for="elevation_filter">Elevation</label>
+          <select id="elevation_filter" onchange="updateMarkers()">
+            <option value="any">Any Elevation</option>
+            <option value="<4000">Below 4000 ft.</option>
+            <option value="4000-5000">4000 - 5000 ft.</option>
+            <option value="5000-6000">5000 - 6000 ft.</option>
+            <option value=">6000">Above 6000 ft.</option>
+          </select>
+        </div>
 
-<h1>High Fish Lakes of Washington State</h1>
+        <div class="controls-group">
+          <label for="size_filter">Lake Size</label>
+          <select id="size_filter" onchange="updateMarkers()">
+            <option value="any">Any Size</option>
+            <option value="<5">Up to 5 Acres</option>
+            <option value="5-10">5 - 10 Acres</option>
+            <option value=">10">Over 10 Acres</option>
+          </select>
+        </div>
 
+        <div class="controls-group">
+          <label for="county_filter">County</label>
+          <select id="county_filter" onchange="updateMarkers()">
+            <option value="any">Any County</option>
+            <option value="Clallam">Clallam</option>
+            <option value="Pierce">Pierce</option>
+            <option value="Jefferson">Jefferson</option>
+            <option value="Snohomish">Snohomish</option>
+            <option value="Okanogan">Okanogan</option>
+            <option value="Yakima">Yakima</option>
+            <option value="Kittitas">Kittitas</option>
+            <option value="Grays Harbor">Grays Harbor</option>
+            <option value="Skamania">Skamania</option>
+            <option value="Skagit">Skagit</option>
+            <option value="Lewis">Lewis</option>
+            <option value="Chelan">Chelan</option>
+            <option value="King">King</option>
+            <option value="Whatcom">Whatcom</option>
+          </select>
+        </div>
+      </div>
 
-<!--
-<p>This page shows the locations of overabundant mountain fishing lakes,
-with data scraped from the
-<a href="https://wdfw.wa.gov/fishing/locations/high-lakes/overabundant">WDFW site</a>.
-</p>
--->
+      <div class="legend-panel">
+        <h3>Legend</h3>
+        <div class="legend-item"><img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png" alt="Red Marker"> Starting Only</div>
+        <div class="legend-item"><img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png" alt="Blue Marker"> Overstocked Only</div>
+        <div class="legend-item"><img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png" alt="Violet Marker"> Both</div>
+        <div class="legend-item"><img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png" alt="Grey Marker"> Other</div>
+      </div>
 
-<p>This page shows the locations of alpine fishing lakes,
-with data scraped from the
-<a href="https://wdfw.wa.gov/fishing/locations/high-lakes">WDFW site</a>.
-To help planning, it breaks them out by whether they are overabundant
-or good starting lakes.
-</p>
+    </div> <!-- End Sidebar -->
 
-<p>
-<h2>Overabundant: </h2>
-  Overabundant lakes are ones where there are too many fish (usually from human stocking)
-  for the available resources.  This puts a great burden on the ecosystem, and
-  the WDFW encourages anglers to harvest the maximum daily limit.
-  Enjoy Washington's mountains, catch some of the hungriest fish you'll ever find,
-  and do the environment a favor!
-</p>
+    <div class="map-container">
+      <div id="mapid"></div>
+    </div>
 
-<p>
-<h2>Starting: </h2>
-  These lakes are easier to access for people new to the sport of alpine fishing.
-</p>
+  </div> <!-- End App Layout -->
 
-<b>Filters:</b>
-<br>
+  <div class="footer">
+    <div class="footer-links">
+      <p>Download KMLs for Google Earth:</p>
+      <ul>
+        <li><a href="https://raw.githubusercontent.com/field-cady/overabundant_lakes/master/data/overabundant_lakes.kml">Overabundant</a></li>
+        <li><a href="https://raw.githubusercontent.com/field-cady/overabundant_lakes/master/data/starting_lakes.kml">Starting</a></li>
+        <li><a href="https://raw.githubusercontent.com/field-cady/overabundant_lakes/master/data/all_lakes.kml">All Alpine</a></li>
+      </ul>
+      <p>Created by <a href="http://www.fieldcady.com">Field Cady</a> • field.cady@gmail.com</p>
+    </div>
+  </div>
 
-<div>
-
-<div style="position:relative;float:left;width:20%">
-<input type="checkbox" id="overabundant_filter" onchange="updateMarkers()" checked>Overabundant Lakes<br>
-<input type="checkbox" id="starting_filter" onchange="updateMarkers()" checked>Good Starting Lakes<br>
-<input type="checkbox" id="other_filter" onchange="updateMarkers()">All<br>
 </div>
 
-<div style="position:relative;float:right;width:80%">
-
-Elevation:
-<select id="elevation_filter" name="elevation_filter" onchange="updateMarkers()">
-  <option value="any">Any Elevation</option>
-  <option value="<4000">Below 4000 ft.</option>
-  <option value="4000-5000">4000-5000 ft.</option>
-  <option value="5000-6000">5000-6000 ft.</option>
-  <option value=">6000">Above 6000 ft.</option>
-</select>
-
-Lake Size:
-<select id="size_filter" name="size_filter" onchange="updateMarkers()">
-  <option value="any">Any Size</option>
-  <option value="<5">Up to 5 Acres</option>
-  <option value="5-10">5-10 Acres</option>
-  <option value=">10">Over 10 Acres</option>
-</select>
-
-County:
-<select id="county_filter" name="county_filter" onchange="updateMarkers()">
-  <option value="any">Any County</option>
-  <option value="Clallam">Clallam</option>
-  <option value="Pierce">Pierce</option>
-  <option value="Jefferson">Jefferson</option>
-  <option value="Snohomish">Snohomish</option>
-  <option value="Okanogan">Okanogan</option>
-  <option value="Yakima">Yakima</option>
-  <option value="Kittitas">Kittitas</option>
-  <option value="Grays Harbor">Grays Harbor</option>
-  <option value="Skamania">Skamania</option>
-  <option value="Skagit">Skagit</option>
-  <option value="Lewis">Lewis</option>
-  <option value="Chelan">Chelan</option>
-  <option value="King">King</option>
-  <option value="Whatcom">Whatcom</option>
-</select>
-</div>
-</div>
-
-<br>
-
-<p></p>
-<b>Legend:</b>
-<img src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png" style="height:3%">Starting
-<img src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png" style="height:3%">Overstocked
-<img src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png" style="height:3%">Other
-
-<!--
-<div style="height:70%;width:70%" id="mapid"></div>
--->
-<!--testing-->
-<div id='mapid' style='width: 100%; height: 50%;'></div>
-<!--<div id='mapid' style='width: 100%;'></div>-->
-
-
-<p>
-If you want to explore what these lakes and mountains really look like,
-I highly encourage you to use Google Earth and plug in these KML files:
-<ul>
-	<li><a href="https://raw.githubusercontent.com/field-cady/overabundant_lakes/master/data/overabundant_lakes.kml">
-		Overabundant Lakes</a></li>
-	<li><a href="https://raw.githubusercontent.com/field-cady/overabundant_lakes/master/data/starting_lakes.kml">
-		Good Starting Lakes</a></li>
-	<li><a href="https://raw.githubusercontent.com/field-cady/overabundant_lakes/master/data/all_lakes.kml">
-		All alpine Lakes</a></li>
-</ul>
-</p>
-
-<p>
-This site was created as a project by
-<a href="http://www.fieldcady.com">Field Cady</a>.
-If you have any feedback you can reach him at field.cady@gmail.com.
-If the map is too far out of date (see the last update above)
-you can ping him and ask him to update it.
-</p>
-
-<p>It has recently been updated to load more quickly.</p>
-
-<p>
-<div id="last_update_timestamp">The data was last updated at: </div>
-</p>
-
-<script type="text/javascript" src="myscripts.js"></script>
-
-
-<script>
-</script>
+<script src="myscripts.js"></script>
 
 </body>
+</html>
