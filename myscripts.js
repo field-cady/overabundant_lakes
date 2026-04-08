@@ -77,7 +77,33 @@ var renderData = function(dat) {
     showTimestamp(dat["timestamp"]);
   }
   addLakesToMap(dat["lakes"]);
+  populateSpeciesFilter(dat["lakes"]);
   updateMarkers();
+}
+
+var populateSpeciesFilter = function(lakes) {
+  var speciesSet = new Set();
+  lakes.forEach(function(lk) {
+    if (lk.species) {
+      lk.species.forEach(function(s) { speciesSet.add(s); });
+    }
+  });
+  
+  var select = document.getElementById('species_filter');
+  if (!select) return;
+  
+  // Clear existing options except 'Any'
+  while (select.options.length > 1) {
+    select.remove(1);
+  }
+  
+  var sortedSpecies = Array.from(speciesSet).sort();
+  sortedSpecies.forEach(function(s) {
+    var opt = document.createElement('option');
+    opt.value = s;
+    opt.innerHTML = s.charAt(0).toUpperCase() + s.slice(1);
+    select.appendChild(opt);
+  });
 }
 
 var addLakesToMap = function(lakes) {
