@@ -106,15 +106,24 @@ var addLakesToMap = function(lakes) {
 // Helper utility functions
 
 var lake2marker_html = function(lk) {
-  var clickable_name = '<a target="_blank" href="'+lk['url']+'">'+lk['name']+'</a>'
-  var elevation = '<p>Elevation: '+String(Math.round(lk['elevation']))+'ft'
-  var county = '<p>County: '+lk['county']+'</p>'
-  var size = '<p>Size: '+String(lk['area'])+'</p>'
-  var species = ''
+  var html = '<div class="popup-custom">';
+  html += '<a target="_blank" href="'+lk['url']+'" class="popup-title">'+lk['name']+' ↗</a>';
+  
+  html += '<div class="popup-row"><span class="popup-label">Elevation</span><span class="popup-value">'+String(Math.round(lk['elevation']))+' ft</span></div>';
+  html += '<div class="popup-row"><span class="popup-label">County</span><span class="popup-value">'+lk['county']+'</span></div>';
+  html += '<div class="popup-row"><span class="popup-label">Size</span><span class="popup-value">'+String(lk['area'])+'</span></div>';
+  
   if (lk['species'] && lk['species'].length > 0) {
-    species = '<p>Species: '+lk['species'].join(', ')+'</p>'
+    html += '<div class="popup-species">';
+    html += '<div class="popup-label" style="margin-bottom: 4px;">Species:</div>';
+    for (var i = 0; i < lk['species'].length; i++) {
+      html += '<span class="species-tag">' + lk['species'][i] + '</span>';
+    }
+    html += '</div>';
   }
-  return clickable_name+elevation+county+size+species;
+  
+  html += '</div>';
+  return html;
 }
 
 var getFilterFunction = function() {
