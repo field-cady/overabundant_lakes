@@ -21,6 +21,11 @@ def parse_table_from_page(txt):
 def html_to_record(r):
     try:
       name = r["name"].find("a").string.strip()
+      # Append ' Lake' if it's missing a common descriptor
+      descriptors = ['lake', 'pond', 'pothole', 'reservoir', 'pot', 'lakes']
+      if not any(d in name.lower() for d in descriptors):
+          name += " Lake"
+      
       url = "https://wdfw.wa.gov" + r["name"].find("a").get("href")
       elevation = r["elevation"].string.strip().replace(',', '').split()[0]
       county = r["county"].string.strip()
@@ -33,6 +38,15 @@ def html_to_record(r):
 starting_url_base = 'https://wdfw.wa.gov/fishing/locations/high-lakes/getting-started?name=&county=All&species=&order=title&sort=asc&page='
 overabundant_url_base = 'https://wdfw.wa.gov/fishing/locations/high-lakes/overabundant?name=&county=All&species=&order=title&sort=asc&page='
 all_url_base = 'https://wdfw.wa.gov/fishing/locations/high-lakes?name=&county=All&species=&order=title&sort=asc&page='
+
+SPECIES_MAP = {
+    "21178": "Brook trout",
+    "21419": "Brown bullhead",
+    "21173": "Brown trout",
+    "74140": "Cutthroat trout",
+    "21184": "Golden trout",
+    "21152": "Rainbow trout"
+}
 
 def get_lakes_from_all_pages(url_base):
     i = 0
@@ -47,7 +61,7 @@ def get_lakes_from_all_pages(url_base):
         if len(records) == 0: break
         all_records.extend(records)
         i += 1
-        time.sleep(0.5) # Be nice to the server
+        time.sleep(0.3) # Be nice to the server
     return all_records
 
 def get_data():
@@ -61,11 +75,25 @@ def get_data():
     print("Fetching Starting Lakes...")
     starting_lakes = get_lakes_from_all_pages(starting_url_base)
     
+    # Fetch species
+    lake_species = {} # url -> list of species
+    for sp_id, sp_name in SPECIES_MAP.items():
+        print(f"Fetching Lakes with {sp_name}...")
+        sp_url = f"https://wdfw.wa.gov/fishing/locations/high-lakes?name=&county=All&species={sp_id}&order=title&sort=asc&page="
+        sp_lakes = get_lakes_from_all_pages(sp_url)
+        for lk in sp_lakes:
+            url = lk['url']
+            if url not in lake_species:
+                lake_species[url] = []
+            lake_species[url].append(sp_name)
+
     overabundant_urls = set(lk['url'] for lk in overabundant_lakes)
     starting_urls = set(lk['url'] for lk in starting_lakes)
+    
     for lk in all_lakes:
         lk['starting'] = lk['url'] in starting_urls
         lk['overabundant'] = lk['url'] in overabundant_urls
+        lk['species'] = lake_species.get(lk['url'], [])
         
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     return dict(
@@ -81,7 +109,10 @@ def lake2marker_html(lk):
   elevation = '<p>Elevation: '+str(round(lk['elevation']))+'ft' + '</p>'
   county = '<p>County: '+lk['county']+'</p>'
   size = '<p>Size: '+str(lk['area'])+'</p>'
-  return elevation + county + size + link
+  species = ''
+  if lk.get('species'):
+      species = '<p>Species: ' + ', '.join(lk['species']) + '</p>'
+  return elevation + county + size + species + link
 
 def get_kml(lakes):
   kml = simplekml.Kml()

@@ -107,7 +107,7 @@ var addLakesToMap = function(lakes) {
 
 var lake2marker_html = function(lk) {
   var html = '<div class="popup-custom">';
-  html += '<a target="_blank" href="'+lk['url']+'" class="popup-title">'+lk['name']+' ↗</a>';
+  html += '<a target="_blank" href="'+lk['url']+'" class="popup-title">'+lk['name']+'</a>';
   
   html += '<div class="popup-row"><span class="popup-label">Elevation</span><span class="popup-value">'+String(Math.round(lk['elevation']))+' ft</span></div>';
   html += '<div class="popup-row"><span class="popup-label">County</span><span class="popup-value">'+lk['county']+'</span></div>';

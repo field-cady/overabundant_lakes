@@ -7,6 +7,7 @@
                 <p>Elevation: 5480ft</p>
                 <p>County: Chelan</p>
                 <p>Size: 18.50 Acres</p>
+                <p>Species: Cutthroat trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/ann-lake">WDFW Page</a>
             </description>
             <Point id="2">
@@ -19,6 +20,7 @@
                 <p>Elevation: 3624ft</p>
                 <p>County: King</p>
                 <p>Size: 18.40 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/annette-lake">WDFW Page</a>
             </description>
             <Point id="4">
@@ -26,11 +28,12 @@
             </Point>
         </Placemark>
         <Placemark id="7">
-            <name>Arbuthnot</name>
+            <name>Arbuthnot Lake</name>
             <description>
                 <p>Elevation: 4770ft</p>
                 <p>County: Whatcom</p>
                 <p>Size: 6.90 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/arbuthnot">WDFW Page</a>
             </description>
             <Point id="6">
@@ -43,6 +46,7 @@
                 <p>Elevation: 3614ft</p>
                 <p>County: King</p>
                 <p>Size: 45.80 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/bear-lake-king">WDFW Page</a>
             </description>
             <Point id="8">
@@ -55,6 +59,7 @@
                 <p>Elevation: 4639ft</p>
                 <p>County: Yakima</p>
                 <p>Size: 3.90 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/bear-lake">WDFW Page</a>
             </description>
             <Point id="10">
@@ -67,6 +72,7 @@
                 <p>Elevation: 4059ft</p>
                 <p>County: Lewis</p>
                 <p>Size: 19.20 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/bertha-may-lake">WDFW Page</a>
             </description>
             <Point id="12">
@@ -79,6 +85,7 @@
                 <p>Elevation: 3896ft</p>
                 <p>County: Skamania</p>
                 <p>Size: 26.60 Acres</p>
+                <p>Species: Brook trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/big-mosquito-lake">WDFW Page</a>
             </description>
             <Point id="14">
@@ -91,6 +98,7 @@
                 <p>Elevation: 4062ft</p>
                 <p>County: Lewis</p>
                 <p>Size: 121.70 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/blue-lake-lewis">WDFW Page</a>
             </description>
             <Point id="16">
@@ -98,11 +106,12 @@
             </Point>
         </Placemark>
         <Placemark id="19">
-            <name>Byrne</name>
+            <name>Byrne Lake</name>
             <description>
                 <p>Elevation: 5548ft</p>
                 <p>County: Snohomish</p>
                 <p>Size: 48.80 Acres</p>
+                <p>Species: Cutthroat trout, Golden trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/byrne">WDFW Page</a>
             </description>
             <Point id="18">
@@ -115,6 +124,7 @@
                 <p>Elevation: 3384ft</p>
                 <p>County: Snohomish</p>
                 <p>Size: 6.60 Acres</p>
+                <p>Species: Brook trout, Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/coal-lake">WDFW Page</a>
             </description>
             <Point id="20">
@@ -127,6 +137,7 @@
                 <p>Elevation: 3965ft</p>
                 <p>County: King</p>
                 <p>Size: 132.00 Acres</p>
+                <p>Species: Brook trout, Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/copper-lake">WDFW Page</a>
             </description>
             <Point id="22">
@@ -139,6 +150,7 @@
                 <p>Elevation: 3834ft</p>
                 <p>County: Lewis</p>
                 <p>Size: 25.70 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/cora-lake">WDFW Page</a>
             </description>
             <Point id="24">
@@ -146,11 +158,12 @@
             </Point>
         </Placemark>
         <Placemark id="27">
-            <name>Cougar</name>
+            <name>Cougar Lake</name>
             <description>
                 <p>Elevation: 5019ft</p>
                 <p>County: Yakima</p>
                 <p>Size: 78.40 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/cougar">WDFW Page</a>
             </description>
             <Point id="26">
@@ -163,6 +176,7 @@
                 <p>Elevation: 5057ft</p>
                 <p>County: King</p>
                 <p>Size: 18.20 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/deception-lakes">WDFW Page</a>
             </description>
             <Point id="28">
@@ -175,6 +189,7 @@
                 <p>Elevation: 4386ft</p>
                 <p>County: Kittitas</p>
                 <p>Size: 39.90 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/deep-lake-kittitas">WDFW Page</a>
             </description>
             <Point id="30">
@@ -187,6 +202,7 @@
                 <p>Elevation: 3062ft</p>
                 <p>County: King</p>
                 <p>Size: 260.90 Acres</p>
+                <p>Species: Cutthroat trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/dorothy-lake">WDFW Page</a>
             </description>
             <Point id="32">
@@ -199,6 +215,7 @@
                 <p>Elevation: 4767ft</p>
                 <p>County: King</p>
                 <p>Size: 56.40 Acres</p>
+                <p>Species: Cutthroat trout, Golden trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/fisher-lake">WDFW Page</a>
             </description>
             <Point id="34">
@@ -211,6 +228,7 @@
                 <p>Elevation: 4810ft</p>
                 <p>County: King</p>
                 <p>Size: 50.20 Acres</p>
+                <p>Species: Brook trout, Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/glacier-lake">WDFW Page</a>
             </description>
             <Point id="36">
@@ -223,6 +241,7 @@
                 <p>Elevation: 3110ft</p>
                 <p>County: Skamania</p>
                 <p>Size: 73.60 Acres</p>
+                <p>Species: Brook trout, Brown trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/goose-lake">WDFW Page</a>
             </description>
             <Point id="38">
@@ -235,6 +254,7 @@
                 <p>Elevation: 4179ft</p>
                 <p>County: Lewis</p>
                 <p>Size: 26.70 Acres</p>
+                <p>Species: Brook trout, Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/granite-lake">WDFW Page</a>
             </description>
             <Point id="40">
@@ -242,11 +262,12 @@
             </Point>
         </Placemark>
         <Placemark id="43">
-            <name>Hayes</name>
+            <name>Hayes Lake</name>
             <description>
                 <p>Elevation: 4782ft</p>
                 <p>County: Whatcom</p>
                 <p>Size: 12.40 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/hayes">WDFW Page</a>
             </description>
             <Point id="42">
@@ -259,6 +280,7 @@
                 <p>Elevation: 3957ft</p>
                 <p>County: Chelan</p>
                 <p>Size: 83.80 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/heather-lake">WDFW Page</a>
             </description>
             <Point id="44">
@@ -271,6 +293,7 @@
                 <p>Elevation: 3890ft</p>
                 <p>County: King</p>
                 <p>Size: 64.80 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/hester-lake">WDFW Page</a>
             </description>
             <Point id="46">
@@ -278,11 +301,12 @@
             </Point>
         </Placemark>
         <Placemark id="49">
-            <name>Hope</name>
+            <name>Hope Lake</name>
             <description>
                 <p>Elevation: 4390ft</p>
                 <p>County: Chelan</p>
                 <p>Size: 1.40 Acres</p>
+                <p>Species: Brook trout, Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/hope">WDFW Page</a>
             </description>
             <Point id="48">
@@ -295,6 +319,7 @@
                 <p>Elevation: 4824ft</p>
                 <p>County: Skamania</p>
                 <p>Size: 9.50 Acres</p>
+                <p>Species: Golden trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/island-skamania1">WDFW Page</a>
             </description>
             <Point id="50">
@@ -307,6 +332,7 @@
                 <p>Elevation: 4150ft</p>
                 <p>County: Snohomish</p>
                 <p>Size: 28.40 Acres</p>
+                <p>Species: Cutthroat trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/janus-lake">WDFW Page</a>
             </description>
             <Point id="52">
@@ -319,6 +345,7 @@
                 <p>Elevation: 4628ft</p>
                 <p>County: Kittitas</p>
                 <p>Size: 28.70 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/joe-lake">WDFW Page</a>
             </description>
             <Point id="54">
@@ -331,6 +358,7 @@
                 <p>Elevation: 4105ft</p>
                 <p>County: Lewis</p>
                 <p>Size: 2.30 Acres</p>
+                <p>Species: Brown trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/knuppenburg-lake">WDFW Page</a>
             </description>
             <Point id="56">
@@ -343,6 +371,7 @@
                 <p>Elevation: 3130ft</p>
                 <p>County: King</p>
                 <p>Size: 9.00 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/lodge-lake">WDFW Page</a>
             </description>
             <Point id="58">
@@ -355,6 +384,7 @@
                 <p>Elevation: 4934ft</p>
                 <p>County: Chelan</p>
                 <p>Size: 25.90 Acres</p>
+                <p>Species: Cutthroat trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/lost-lake-chelan">WDFW Page</a>
             </description>
             <Point id="60">
@@ -367,6 +397,7 @@
                 <p>Elevation: 2674ft</p>
                 <p>County: Snohomish</p>
                 <p>Size: 10.70 Acres</p>
+                <p>Species: Cutthroat trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/lower-ashland-lake">WDFW Page</a>
             </description>
             <Point id="62">
@@ -374,11 +405,12 @@
             </Point>
         </Placemark>
         <Placemark id="65">
-            <name>Lower Loch Katrine</name>
+            <name>Lower Loch Katrine Lake</name>
             <description>
                 <p>Elevation: 2904ft</p>
                 <p>County: King</p>
                 <p>Size: 49.70 Acres</p>
+                <p>Species: Cutthroat trout, Golden trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/lower-loch-katrine">WDFW Page</a>
             </description>
             <Point id="64">
@@ -391,6 +423,7 @@
                 <p>Elevation: 3424ft</p>
                 <p>County: King</p>
                 <p>Size: 30.60 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/lower-tuscohatchie-lake">WDFW Page</a>
             </description>
             <Point id="66">
@@ -403,6 +436,7 @@
                 <p>Elevation: 5067ft</p>
                 <p>County: Kittitas</p>
                 <p>Size: 28.30 Acres</p>
+                <p>Species: Brook trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/manastash-lake">WDFW Page</a>
             </description>
             <Point id="68">
@@ -415,6 +449,7 @@
                 <p>Elevation: 4935ft</p>
                 <p>County: King</p>
                 <p>Size: 128.00 Acres</p>
+                <p>Species: Cutthroat trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/marmot-lake">WDFW Page</a>
             </description>
             <Point id="70">
@@ -427,6 +462,7 @@
                 <p>Elevation: 2963ft</p>
                 <p>County: King</p>
                 <p>Size: 37.70 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/marten-lake">WDFW Page</a>
             </description>
             <Point id="72">
@@ -434,11 +470,12 @@
             </Point>
         </Placemark>
         <Placemark id="75">
-            <name>Mazama</name>
+            <name>Mazama Lake</name>
             <description>
                 <p>Elevation: 4708ft</p>
                 <p>County: Whatcom</p>
                 <p>Size: 1.60 Acres</p>
+                <p>Species: Brook trout, Cutthroat trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/mazama">WDFW Page</a>
             </description>
             <Point id="74">
@@ -451,6 +488,7 @@
                 <p>Elevation: 2983ft</p>
                 <p>County: Lewis</p>
                 <p>Size: 16.80 Acres</p>
+                <p>Species: Brown trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/newaukum-lake">WDFW Page</a>
             </description>
             <Point id="76">
@@ -458,11 +496,12 @@
             </Point>
         </Placemark>
         <Placemark id="79">
-            <name>Pear</name>
+            <name>Pear Lake</name>
             <description>
                 <p>Elevation: 4813ft</p>
                 <p>County: Snohomish</p>
                 <p>Size: 29.30 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/pear">WDFW Page</a>
             </description>
             <Point id="78">
@@ -470,11 +509,12 @@
             </Point>
         </Placemark>
         <Placemark id="81">
-            <name>Philippa</name>
+            <name>Philippa Lake</name>
             <description>
                 <p>Elevation: 3350ft</p>
                 <p>County: King</p>
                 <p>Size: 121.60 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/philippa">WDFW Page</a>
             </description>
             <Point id="80">
@@ -487,6 +527,7 @@
                 <p>Elevation: 4795ft</p>
                 <p>County: Chelan</p>
                 <p>Size: 53.10 Acres</p>
+                <p>Species: Cutthroat trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/rainy-lake">WDFW Page</a>
             </description>
             <Point id="82">
@@ -499,6 +540,7 @@
                 <p>Elevation: 3548ft</p>
                 <p>County: King</p>
                 <p>Size: 2.80 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/rockdale-lake">WDFW Page</a>
             </description>
             <Point id="84">
@@ -511,6 +553,7 @@
                 <p>Elevation: 7052ft</p>
                 <p>County: Okanogan</p>
                 <p>Size: 6.90 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/scatter-lake">WDFW Page</a>
             </description>
             <Point id="86">
@@ -523,6 +566,7 @@
                 <p>Elevation: 5135ft</p>
                 <p>County: Chelan</p>
                 <p>Size: 80.90 Acres</p>
+                <p>Species: Brook trout, Cutthroat trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/schaefer-lake">WDFW Page</a>
             </description>
             <Point id="88">
@@ -530,11 +574,12 @@
             </Point>
         </Placemark>
         <Placemark id="91">
-            <name>Serene</name>
+            <name>Serene Lake</name>
             <description>
                 <p>Elevation: 2525ft</p>
                 <p>County: Snohomish</p>
                 <p>Size: 49.90 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/serene">WDFW Page</a>
             </description>
             <Point id="90">
@@ -547,6 +592,7 @@
                 <p>Elevation: 3114ft</p>
                 <p>County: Skagit</p>
                 <p>Size: 30.60 Acres</p>
+                <p>Species: Cutthroat trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/slide-lake">WDFW Page</a>
             </description>
             <Point id="92">
@@ -571,6 +617,7 @@
                 <p>Elevation: 4020ft</p>
                 <p>County: King</p>
                 <p>Size: 152.90 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/snow-lake-king">WDFW Page</a>
             </description>
             <Point id="96">
@@ -583,6 +630,7 @@
                 <p>Elevation: 4264ft</p>
                 <p>County: Kittitas</p>
                 <p>Size: 77.80 Acres</p>
+                <p>Species: Cutthroat trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/spectacle-lake">WDFW Page</a>
             </description>
             <Point id="98">
@@ -590,11 +638,12 @@
             </Point>
         </Placemark>
         <Placemark id="101">
-            <name>Square</name>
+            <name>Square Lake</name>
             <description>
                 <p>Elevation: 4994ft</p>
                 <p>County: Chelan</p>
                 <p>Size: 73.30 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/square">WDFW Page</a>
             </description>
             <Point id="100">
@@ -607,6 +656,7 @@
                 <p>Elevation: 3550ft</p>
                 <p>County: Kittitas</p>
                 <p>Size: 8.90 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/stirrup-lake">WDFW Page</a>
             </description>
             <Point id="102">
@@ -619,6 +669,7 @@
                 <p>Elevation: 5443ft</p>
                 <p>County: Pierce</p>
                 <p>Size: 21.50 Acres</p>
+                <p>Species: Brook trout, Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/summit-lake-pierce">WDFW Page</a>
             </description>
             <Point id="104">
@@ -631,6 +682,7 @@
                 <p>Elevation: 4512ft</p>
                 <p>County: King</p>
                 <p>Size: 22.60 Acres</p>
+                <p>Species: Brook trout, Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/surprise-lake">WDFW Page</a>
             </description>
             <Point id="106">
@@ -643,6 +695,7 @@
                 <p>Elevation: 4799ft</p>
                 <p>County: Yakima</p>
                 <p>Size: 50.50 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/swamp-lake">WDFW Page</a>
             </description>
             <Point id="108">
@@ -655,6 +708,7 @@
                 <p>Elevation: 5175ft</p>
                 <p>County: Chelan</p>
                 <p>Size: 12.60 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/trap">WDFW Page</a>
             </description>
             <Point id="110">
@@ -662,11 +716,12 @@
             </Point>
         </Placemark>
         <Placemark id="113">
-            <name>Twin Sisters - Big</name>
+            <name>Twin Sisters - Big Lake</name>
             <description>
                 <p>Elevation: 5157ft</p>
                 <p>County: Yakima</p>
                 <p>Size: 103.00 Acres</p>
+                <p>Species: Golden trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/twin-sisters-big">WDFW Page</a>
             </description>
             <Point id="112">
@@ -674,11 +729,12 @@
             </Point>
         </Placemark>
         <Placemark id="115">
-            <name>Twin Sisters - Little</name>
+            <name>Twin Sisters - Little Lake</name>
             <description>
                 <p>Elevation: 5188ft</p>
                 <p>County: Yakima</p>
                 <p>Size: 40.40 Acres</p>
+                <p>Species: Brook trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/twin-sisters-little">WDFW Page</a>
             </description>
             <Point id="114">
@@ -691,6 +747,7 @@
                 <p>Elevation: 2936ft</p>
                 <p>County: Snohomish</p>
                 <p>Size: 59.00 Acres</p>
+                <p>Species: Golden trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/upper-big-greider-lake">WDFW Page</a>
             </description>
             <Point id="116">
@@ -698,11 +755,12 @@
             </Point>
         </Placemark>
         <Placemark id="119">
-            <name>Valhalla</name>
+            <name>Valhalla Lake</name>
             <description>
                 <p>Elevation: 4834ft</p>
                 <p>County: Chelan</p>
                 <p>Size: 24.00 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/valhalla">WDFW Page</a>
             </description>
             <Point id="118">
@@ -710,11 +768,12 @@
             </Point>
         </Placemark>
         <Placemark id="121">
-            <name>Walupt</name>
+            <name>Walupt Lake</name>
             <description>
                 <p>Elevation: 3930ft</p>
                 <p>County: Lewis</p>
                 <p>Size: 381.60 Acres</p>
+                <p>Species: Cutthroat trout, Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/walupt">WDFW Page</a>
             </description>
             <Point id="120">
@@ -727,6 +786,7 @@
                 <p>Elevation: 5045ft</p>
                 <p>County: Chelan</p>
                 <p>Size: 8.50 Acres</p>
+                <p>Species: Rainbow trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/wolverine-lake">WDFW Page</a>
             </description>
             <Point id="122">
