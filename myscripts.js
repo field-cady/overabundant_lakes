@@ -81,12 +81,15 @@ var renderData = function(dat) {
   updateMarkers();
 }
 
+// Global variable to keep track of cumulative species counts across all files
+var globalSpeciesCounts = {};
+
 var populateSpeciesFilter = function(lakes) {
-  var speciesCounts = {};
+  // Update global counts
   lakes.forEach(function(lk) {
     if (lk.species) {
       lk.species.forEach(function(s) { 
-        speciesCounts[s] = (speciesCounts[s] || 0) + 1;
+        globalSpeciesCounts[s] = (globalSpeciesCounts[s] || 0) + 1;
       });
     }
   });
@@ -99,14 +102,14 @@ var populateSpeciesFilter = function(lakes) {
     select.remove(1);
   }
   
-  var sortedSpecies = Object.keys(speciesCounts).sort(function(a, b) {
-    return speciesCounts[b] - speciesCounts[a]; // Descending order
+  var sortedSpecies = Object.keys(globalSpeciesCounts).sort(function(a, b) {
+    return globalSpeciesCounts[b] - globalSpeciesCounts[a]; // Descending order
   });
   
   sortedSpecies.forEach(function(s) {
     var opt = document.createElement('option');
     opt.value = s;
-    opt.innerHTML = s.charAt(0).toUpperCase() + s.slice(1) + ' (' + speciesCounts[s] + ')';
+    opt.innerHTML = s.charAt(0).toUpperCase() + s.slice(1) + ' (' + globalSpeciesCounts[s] + ')';
     select.appendChild(opt);
   });
 }
