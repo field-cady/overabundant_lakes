@@ -82,10 +82,12 @@ var renderData = function(dat) {
 }
 
 var populateSpeciesFilter = function(lakes) {
-  var speciesSet = new Set();
+  var speciesCounts = {};
   lakes.forEach(function(lk) {
     if (lk.species) {
-      lk.species.forEach(function(s) { speciesSet.add(s); });
+      lk.species.forEach(function(s) { 
+        speciesCounts[s] = (speciesCounts[s] || 0) + 1;
+      });
     }
   });
   
@@ -97,11 +99,14 @@ var populateSpeciesFilter = function(lakes) {
     select.remove(1);
   }
   
-  var sortedSpecies = Array.from(speciesSet).sort();
+  var sortedSpecies = Object.keys(speciesCounts).sort(function(a, b) {
+    return speciesCounts[b] - speciesCounts[a]; // Descending order
+  });
+  
   sortedSpecies.forEach(function(s) {
     var opt = document.createElement('option');
     opt.value = s;
-    opt.innerHTML = s.charAt(0).toUpperCase() + s.slice(1);
+    opt.innerHTML = s.charAt(0).toUpperCase() + s.slice(1) + ' (' + speciesCounts[s] + ')';
     select.appendChild(opt);
   });
 }
