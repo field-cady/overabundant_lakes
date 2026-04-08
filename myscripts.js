@@ -130,6 +130,13 @@ var getFilterFunction = function() {
   // Reads current filter settings and returns a function that says whether
   // a lake passes those filters
 
+  // Name Search
+  var search_filter_value = document.getElementById('search_filter') ? document.getElementById('search_filter').value.toLowerCase().trim() : '';
+  var text_search_filter = function(lk) {
+    if (search_filter_value === '') return true;
+    return lk['name'].toLowerCase().includes(search_filter_value);
+  }
+
   // Type
   var show_overabundant = document.getElementById('overabundant_filter').checked;
   var show_starting = document.getElementById('starting_filter').checked;
@@ -191,7 +198,7 @@ var getFilterFunction = function() {
   }
   
   return function(lk) {
-    return elevation_filter(lk.elevation) && size_filter(lk.area) && county_filter(lk.county) && type_filter(lk) && species_filter(lk)
+    return text_search_filter(lk) && elevation_filter(lk.elevation) && size_filter(lk.area) && county_filter(lk.county) && type_filter(lk) && species_filter(lk)
   }
 }
 

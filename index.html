@@ -120,7 +120,7 @@
       font-size: 0.85rem;
       color: #475569;
     }
-    select {
+    select, input[type="text"] {
       width: 100%;
       padding: 8px 10px;
       border: 1px solid #cbd5e1;
@@ -129,8 +129,9 @@
       font-size: 0.9rem;
       outline: none;
       color: #334155;
+      box-sizing: border-box;
     }
-    select:focus { border-color: var(--accent-color); }
+    select:focus, input[type="text"]:focus { border-color: var(--accent-color); }
     
     .checkbox-item {
       display: flex;
@@ -352,6 +353,11 @@
       <div class="controls-panel">
         <h3>Map Filters</h3>
         
+        <div class="controls-group">
+          <label for="search_filter">Search Lake Name</label>
+          <input type="text" id="search_filter" placeholder="e.g. Airplane" onkeyup="updateMarkers()">
+        </div>
+
         <div class="controls-group">
           <label>Lake Types</label>
           
