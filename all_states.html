@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High Fish Lakes of the Pacific Northwest</title>
+
+  <!-- Leaflet Maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+     crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+     crossorigin=""></script>
+
+  <!-- Leaflet MarkerCluster -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
+  <link rel="icon" type="image/png" href="trout.png">
+
+  <style>
+    :root {
+      --text-color: #334155;
+      --bg-color: #f8fafc;
+      --container-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --accent-color: #0284c7;
+      --info-color: #64748b;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1250px;
+      margin: 0 auto;
+      background: var(--container-bg);
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    header {
+      border-bottom: 2px solid var(--border-color);
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    h1 { 
+      color: #0f172a; 
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    p { margin-bottom: 1rem; }
+    a { color: var(--accent-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    
+    .intro { 
+      font-size: 0.95rem; 
+      color: #64748b; 
+      margin-bottom: 20px; 
+      max-width: 900px; 
+      line-height: 1.4;
+    }
+
+    /* Map and Sidebar Layout */
+    .app-layout {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+      align-items: stretch;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      flex: 0 0 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .controls-panel {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .controls-panel h3 {
+      font-size: 1rem;
+      margin: 0 0 15px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #cbd5e1;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .controls-group {
+      margin-bottom: 18px;
+    }
+    .controls-group:last-child {
+      margin-bottom: 0;
+    }
+    .controls-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #475569;
+    }
+    select, input[type="text"] {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background-color: white;
+      font-size: 0.9rem;
+      outline: none;
+      color: #334155;
+      box-sizing: border-box;
+    }
+    select:focus, input[type="text"]:focus { border-color: var(--accent-color); }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: normal !important;
+      position: relative;
+    }
+    .checkbox-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      accent-color: var(--accent-color);
+    }
+
+    /* Tooltip styles */
+    .info-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      background: var(--info-color);
+      color: white;
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: bold;
+      cursor: help;
+      margin-left: 4px;
+    }
+    
+    [data-tooltip] {
+      position: relative;
+    }
+    [data-tooltip]::before {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e293b;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      width: 220px;
+      line-height: 1.4;
+      text-align: left;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.2s;
+      z-index: 100;
+      pointer-events: none;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    [data-tooltip]:hover::before {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .legend-panel {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 15px;
+    }
+    .legend-panel h3 {
+      font-size: 0.85rem;
+      margin: 0 0 10px 0;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .legend-item { 
+      display: flex; 
+      align-items: center; 
+      gap: 10px; 
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      color: #475569;
+    }
+    .legend-item:last-child { margin-bottom: 0; }
+    .legend-item img { height: 18px; }
+    
+    /* Map Area */
+    .map-container {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    #mapid {
+      width: 100%;
+      height: 100%;
+      min-height: 650px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 1;
+    }
+
+    /* Custom Leaflet Popup Styles */
+    .leaflet-popup-content-wrapper {
+      border-radius: 8px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      padding: 0;
+    }
+    .leaflet-popup-content {
+      margin: 0;
+      line-height: 1.5;
+      font-family: inherit;
+    }
+    .popup-custom {
+      padding: 15px 18px;
+    }
+    .popup-custom a.popup-title {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+    .popup-custom a.popup-title:hover {
+      color: var(--accent-color);
+    }
+    .popup-custom .popup-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+    .popup-custom .popup-label {
+      font-weight: 600;
+      color: #64748b;
+      margin-right: 15px;
+    }
+    .popup-custom .popup-value {
+      color: #334155;
+      text-align: right;
+    }
+    .popup-custom .popup-species {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-color);
+      font-size: 0.85rem;
+    }
+    .popup-custom .species-tag {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin: 3px 3px 0 0;
+      font-weight: 500;
+      border: 1px solid #e2e8f0;
+    }
+
+    @media (max-width: 1000px) {
+      .app-layout { flex-direction: column; }
+      .sidebar { flex: none; width: 100%; }
+      #mapid { height: 500px; min-height: auto; }
+      .container { padding: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <header>
+    <h1>High Fish Lakes of the Pacific Northwest</h1>
+    <div id="last_update_timestamp">Updated: </div>
+  </header>
+
+  <p class="intro">
+    Made by <a href="http://www.fieldcady.com" target="_blank">Field Cady</a> with data from the fish/game departments of
+    <a href="https://wdfw.wa.gov/fishing/locations/high-lakes" target="_blank">Washington</a>,
+    <a href="https://myodfw.com/articles/stocking-oregons-hike-lakes" target="_blank">Oregon</a> and
+    <a href="https://idfg.idaho.gov/ifwis/fishingplanner/" target="_blank">Idaho</a>.
+  </p>
+
+  <div class="app-layout">
+    
+    <div class="sidebar">
+      
+      <div class="controls-panel">
+        <h3>Map Filters</h3>
+        
+        <div class="controls-group">
+          <label for="search_filter">Search Lake Name</label>
+          <input type="text" id="search_filter" placeholder="e.g. Airplane" onkeyup="updateMarkers()">
+        </div>
+
+        <div class="controls-group">
+          <label for="species_filter">Fish Species</label>
+          <select id="species_filter" onchange="updateMarkers()">
+            <option value="any">Any Species</option>
+          </select>
+        </div>
+
+        <div class="controls-group">
+          <label for="size_filter">Lake Size</label>
+          <select id="size_filter" onchange="updateMarkers()">
+            <option value="any">Any Size</option>
+            <option value="<5">Up to 5 Acres</option>
+            <option value="5-10">5 - 10 Acres</option>
+            <option value=">10">Over 10 Acres</option>
+          </select>
+        </div>
+
+        <div class="controls-group">
+          <label for="elevation_filter">Elevation (WA & OR)</label>
+          <select id="elevation_filter" onchange="updateMarkers()">
+            <option value="any">Any Elevation</option>
+            <option value="<3000">Below 3,000 ft</option>
+            <option value="3000-5000">3,000 - 5,000 ft</option>
+            <option value=">5000">Above 5,000 ft</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; text-align: center; font-size: 0.9rem;">
+        <p style="margin: 0 0 10px 0; color: #475569;">If you find this map useful, consider</p>
+        <a href="https://www.buymeacoffee.com/field.cady" target="_blank" style="display: inline-block; background-color: #ffdd00; color: #000000; font-weight: bold; padding: 8px 15px; border-radius: 5px; text-decoration: none; border: 1px solid #e0c200;">Buying me a coffee! ☕</a>
+      </div>
+
+    </div> <!-- End Sidebar -->
+
+    <div class="map-container">
+      <div id="mapid"></div>
+    </div>
+
+  </div> <!-- End App Layout -->
+
+</div>
+
+<script src="all_scripts.js"></script>
+
+</body>
+</html>
