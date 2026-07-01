@@ -3628,14 +3628,14 @@
         <Placemark id="1053">
             <name>Elk Lake (Skamania County)</name>
             <description>
-                <p>Elevation: 3973ft</p>
+                <p>Elevation: 4689ft</p>
                 <p>County: Skamania</p>
-                <p>Size: 27.30 Acres</p>
-                <p>Species: Brown trout, Cutthroat trout</p>
-                <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/elk-skamania">WDFW Page</a>
+                <p>Size: 12.50 Acres</p>
+                <p>Species: Cutthroat trout</p>
+                <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/elk-skamania-1">WDFW Page</a>
             </description>
             <Point id="1052">
-                <coordinates>-122.235863,46.335203,0.0</coordinates>
+                <coordinates>-121.795763,46.021834,0.0</coordinates>
             </Point>
         </Placemark>
         <Placemark id="1055">
@@ -9593,27 +9593,27 @@
         <Placemark id="1971">
             <name>Rock (King County) Lake</name>
             <description>
-                <p>Elevation: 3876ft</p>
-                <p>County: King</p>
-                <p>Size: 6.20 Acres</p>
-                <p>Species: Rainbow trout</p>
-                <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/rock-king2">WDFW Page</a>
-            </description>
-            <Point id="1970">
-                <coordinates>-121.442925,47.545822,0.0</coordinates>
-            </Point>
-        </Placemark>
-        <Placemark id="1973">
-            <name>Rock (King County) Lake</name>
-            <description>
                 <p>Elevation: 4550ft</p>
                 <p>County: King</p>
                 <p>Size: 23.10 Acres</p>
                 <p>Species: Brook trout</p>
                 <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/rock-king1">WDFW Page</a>
             </description>
-            <Point id="1972">
+            <Point id="1970">
                 <coordinates>-121.335078,47.640293,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="1973">
+            <name>Rock (King County) Lake</name>
+            <description>
+                <p>Elevation: 3876ft</p>
+                <p>County: King</p>
+                <p>Size: 6.20 Acres</p>
+                <p>Species: Rainbow trout</p>
+                <a target="_blank" href="https://wdfw.wa.gov/fishing/locations/high-lakes/rock-king2">WDFW Page</a>
+            </description>
+            <Point id="1972">
+                <coordinates>-121.442925,47.545822,0.0</coordinates>
             </Point>
         </Placemark>
         <Placemark id="1975">
